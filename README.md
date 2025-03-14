@@ -1,52 +1,73 @@
-Mô tả (Tiếng Việt)
-Dự án E-Commerce hoàn chỉnh sử dụng React, TypeScript, và Zustand để xây dựng trang bán hàng với đầy đủ tính năng cần thiết:
+# zustand-ecommerce
 
-Quản lý sản phẩm:
+A complete E-Commerce app built with **React**, **TypeScript**, **Zustand**, and **Vite**.
 
-Danh sách sản phẩm, trang chi tiết sản phẩm (hình ảnh, mô tả, đánh giá, v.v.).
-Lọc sản phẩm theo danh mục, giá, màu sắc... (có tích hợp tính năng lưu trạng thái với persist).
-Chức năng mua hàng:
+## Description
 
-Giỏ hàng (Cart): Thêm, xóa, cập nhật số lượng sản phẩm.
-Thanh toán (Checkout): Giả lập quy trình thanh toán, có thể mở rộng tích hợp cổng thanh toán sau.
-Quản lý đơn hàng: Hiển thị lịch sử mua hàng, trạng thái đơn hàng.
-Tài khoản người dùng:
+A complete E-Commerce app built with React, TypeScript, Zustand, and Vite. It features product filtering by category, price, and color, along with search functionality by product title. The app also includes full shopping features such as cart, checkout, order management, and user accounts. The state is persisted using middleware so data remains even after a page refresh.
 
-Đăng ký, đăng nhập, quản lý thông tin cá nhân.
-Wishlist (danh sách yêu thích), lưu sản phẩm quan tâm.
-Giao diện hiện đại & Responsive:
+## Features
 
-Sử dụng UI linh hoạt, hỗ trợ tốt trên thiết bị di động và máy tính.
-Sticky header, sidebar filter, ribbon “NEW”/“SALE” cho sản phẩm, v.v.
-Tích hợp:
+- **Product Filtering**: Filter products by category, price range, color, and search by title.
+- **Shopping Cart**: Add, remove, and update product quantities.
+- **Checkout Process**: Simulated checkout flow that can be extended to integrate payment gateways.
+- **Order Management**: Track order history and status.
+- **User Accounts**: User registration, login, and profile management.
+- **State Persistence**: Zustand with persist middleware ensures the app state is saved in localStorage.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
 
-Zustand + middleware persist giúp lưu lại state khi tải lại trang (F5).
-TypeScript đảm bảo code rõ ràng, dễ bảo trì.
-Có thể mở rộng thêm Redux hoặc Recoil nếu cần.
-Dự án này là nền tảng cơ bản cho các trang thương mại điện tử, có thể mở rộng tính năng như thanh toán thực, quản lý kho, tạo mã giảm giá, thông báo qua email, v.v.
+## Tech Stack
 
-Description (English)
-A complete E-Commerce project built with React, TypeScript, and Zustand, covering essential online shopping features:
+- **React**
+- **TypeScript**
+- **Vite** (for fast development and build)
+- **Zustand** (state management with persist middleware)
+- **SCSS/CSS**
+- **React Icons**
 
-Product Management:
+## Installation
 
-Product listing, product detail pages (images, description, reviews, etc.).
-Advanced filtering (category, price range, colors, etc.) with persisted state.
-Shopping & Checkout:
+1. **Clone the repository:**
 
-Cart: Add, remove, and update product quantities.
-Checkout: Simulate or integrate payment flow.
-Order Management: Display order history and status.
-User Accounts:
+```bash
+ git clone https://github.com/your-username/zustand-ecommerce.git
+```
 
-Registration, login, profile management.
-Wishlist for favorite products.
-Modern & Responsive UI:
+2. **Navigate to the project directory:**
 
-Flexible design for both mobile and desktop.
-Sticky header, side filters, “NEW”/“SALE” ribbons on products, etc.
-Integration:
+```
+  cd zustand-ecommerce
+```
 
-Zustand with persist middleware to maintain state on page refresh.
-TypeScript for clear, maintainable code.
-Potential to expand with real payment gateways, inventory management, coupon codes, email notifications, etc.
+3. **Install dependencies:**
+
+```
+  npm install
+```
+
+4. **Run the project:**
+
+```
+  npm run dev
+```
+
+The app will run at http://localhost:3000 (or the port defined by Vite).
+
+## Usage
+
+- Use the sidebar to filter products by Category, Price, and Colors.
+- Use the search input to find products by title.
+- Add products to the cart and proceed to checkout.
+- Manage orders and update your user profile in the User Account section.
+- The application state persists across page refreshes.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.
+
+## License
+
+This project is licensed under the MIT License.
+
+Happy coding! 🚀
