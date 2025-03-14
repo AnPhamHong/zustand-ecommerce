@@ -1,0 +1,194 @@
+@use "../variables"as *;
+
+.card-list {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  $card-border-radius: 12px;
+  $card-transition: transform 0.3s ease;
+  $card-img-height: 220px;
+  $card-img-scale: 0.8;
+
+  .card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: $card-border-radius;
+    transition: $card-transition;
+    background-color: $color-text-inverse;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+
+    &:hover {
+      transform: translateY(-5px); // Hover lift effect
+      box-shadow: 0 12px 32px rgba(107, 112, 92, 0.5); // Hover with color #6B705C
+
+      .card-img {
+        width: 100%; // Scale to container size
+        transform: scale($card-img-scale); // Increase image size
+      }
+    }
+  }
+
+  .card-img-wrapper {
+    width: 100%;
+    height: $card-img-height; // Fixed size
+    overflow: hidden; // Hide overflow
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+  }
+
+  .card-img {
+    width: 80%; // Image is smaller by default
+    height: 100%;
+    object-fit: contain; // Maintain image aspect ratio, not distorted
+    transition: transform 0.5s ease; // Smooth zoom effect
+  }
+
+  .corner-ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+
+    border-top: 60px solid $color-accent;
+    border-right: 60px solid transparent;
+    z-index: 1;
+    border-top-left-radius: 12px;
+    text-transform: uppercase;
+
+    &::before {
+      content: attr(data-ribbon);
+      position: absolute;
+      top: -47px;
+      left: 5px;
+      transform: rotate(-45deg);
+      color: $color-text-inverse;
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+
+    &[data-ribbon=""] {
+      display: none;
+    }
+
+    &[data-ribbon="sale"] {
+      border-top: 60px solid $color-sale;
+    }
+  }
+
+  .card-details {
+    padding: 0.5rem;
+    .card-info {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .card-title {
+        font-weight: bold;
+      }
+
+      .card-color {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+
+        > div {
+          width: 1.6rem;
+          height: 1.6rem;
+          border-radius: 50%;
+          border: 0.5px solid $color-variant-end;
+          transition: border 0.3s ease;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+
+          &:hover {
+            box-shadow: 0 0 0 2px $color-variant-start,
+              0 0 0 4px $color-variant-end;
+            cursor: pointer;
+            transform: translateY(-5px);
+          }
+        }
+      }
+
+      .card-price {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+
+        &-current {
+          font-weight: bold;
+          font-size: 1.5rem;
+          color: $color-price;
+        }
+
+        &-prev {
+          text-decoration: line-through;
+          color: $color-text-muted;
+          font-size: 0.8rem;
+          padding-top: 0.6rem;
+        }
+      }
+    }
+
+    .card-review {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      svg {
+        color: gold;
+      }
+    }
+  }
+
+  .card-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    background: #F0F4F8;
+
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding: 0.5rem;
+
+    .product-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.5rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+      &:nth-child(1),
+      &:nth-child(2) {
+        &:hover {
+          color: $color-accent;
+          transform: scale(1.1) rotate(10deg);
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+      }
+      &:nth-child(3) {
+        &:hover {
+          color: $color-accent;
+          transform: scale(1.1);
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+      }
+    }
+  }
+}

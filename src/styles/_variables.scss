@@ -1,0 +1,36 @@
+$font-family-primary: 'Poppins', sans-serif;
+
+// Base font-size: 16px (desktop)
+$font-size-base: 1rem; // 1rem = 16px
+$line-height-base: 1.5;
+
+// Các kích thước cho heading
+$font-size-h1: 2rem;    // ~32px
+$font-size-h2: 1.75rem; // ~28px
+$font-size-h3: 1.5rem;  // ~24px
+
+// Text nhỏ (ví dụ: label, caption)
+$font-size-small: 0.875rem; // ~14px
+
+$color-bg: #E9EBEC;         
+$color-sidebar: #DFE5D9;    
+$color-header: #4B6870;     
+$color-accent: #6B5EA8;     
+$color-text: #333;          
+$color-text-inverse: #FFFFFF;  
+$cursor-color: #2f4858;
+$color-shadow: #DAD7CD; 
+$color-hover-shadow: #B7B7A4; // Màu bóng khi hover (đậm hơn 1 chút)
+
+// Accent Colors
+$color-border: #6B705C; // Viền hoặc bóng phụ
+
+// Text Colors
+$color-text: #333; // Màu chữ chính
+$color-text-muted: #8c8c8c ; // Màu chữ phụ (giá cũ)
+$color-price: #d32f2f; // Màu giá nổi bật
+$color-sale: #E63946;
+
+// Color Variant Gradient
+$color-variant-start: #D4A373; // Vàng nâu
+$color-variant-end: #B5838D;   // Hồng đất

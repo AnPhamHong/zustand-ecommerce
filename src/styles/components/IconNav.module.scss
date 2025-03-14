@@ -1,0 +1,24 @@
+@use "../variables" as *;
+
+.iconNav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  > svg {
+    color: $color-text-inverse;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+    // &:hover {
+    //   color: $cursor-color; // Change color on hover
+    //   transform: scale(1.2); // Scale up by 20%
+    // }
+
+    &:hover {
+      color: lighten($color-accent, 20%); // Sáng hơn màu accent
+
+      transform: scale(1.2) rotate(5deg); // Scale up and rotate 5 degrees
+    }
+  }
+}

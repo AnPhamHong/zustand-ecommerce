@@ -1,0 +1,60 @@
+@use "../variables" as *;
+
+.filter-section {
+  h2,
+  h3 {
+    color: $color-header;
+  }
+  form > * {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin-top: 0.8rem;
+
+    .radio-label span::before {
+      border-color: $color-header; 
+    }
+    /* Hover radio */
+    .radio-label:hover span::before {
+      border-color: $color-accent;
+    }
+    // Hide radio default
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    // Use span to show button radio
+    span {
+      position: relative;
+      padding-left: 2.5rem;
+      cursor: pointer;
+    }
+
+    // Create custom radio using pseudo-element of span
+    span::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      border: 1px solid $color-accent;
+      border-radius: 50%;
+      background-color: $color-text-inverse;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    // Effect on radio selected
+    input:checked + span::before {
+      background-color: $color-accent;
+      border-color: $color-accent;
+    }
+
+    &:hover span::before {
+      border-color: $color-accent;
+    }
+  }
+}
