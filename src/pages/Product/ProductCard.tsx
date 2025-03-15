@@ -2,6 +2,7 @@ import { getColorFromName } from "../../utils/getColorFromName";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
 import { Product } from "../../db/data";
 import renderStar from "../../utils/getStar";
+import { useFavoritesStore } from "../../store/favoriteStore";
 
 const ProductCard = ({
   isSale,
@@ -12,10 +13,17 @@ const ProductCard = ({
   reviews,
   price,
   oldPrice,
-  //   company,
   colors,
-}: //   category,
-Product) => {
+  id,
+}: Product) => {
+  const { favorites, toggleFavorite } = useFavoritesStore();
+
+  const handleToggleFavorite = () => {
+    toggleFavorite(id);
+  };
+
+  const isFavorite = favorites.includes(id);
+  console.log(isFavorite);
   return (
     <div className="card-container">
       <div className="card-img-wrapper">
@@ -51,8 +59,15 @@ Product) => {
         </div>
       </div>
       <div className="card-actions">
-        <button className="product-btn btn-heart">
-          <CiHeart size={24} style={{ strokeWidth: 0.5 }} />
+        <button
+          className="product-btn btn-heart"
+          onClick={handleToggleFavorite}
+        >
+          <CiHeart
+            size={24}
+            style={{ strokeWidth: 0.5 }}
+            color={isFavorite ? "#E63946" : ""}
+          />
         </button>
         <button className="product-btn btn-cart">
           <CiShoppingCart size={24} style={{ strokeWidth: 0.5 }} />

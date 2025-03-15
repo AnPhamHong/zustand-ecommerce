@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
-import { data } from "../../db/data";
 import "../../styles/pages/Products.scss";
 import ProductCard from "./ProductCard";
 import { useFilterStore } from "../../store/filterStore";
 import EmptyProduct from "./EmptyProduct";
+import { getProducts, Product } from "../../db/data";
 
 const Products: React.FC = () => {
   const {
@@ -15,8 +15,10 @@ const Products: React.FC = () => {
     selectedBrand,
   } = useFilterStore();
 
+  const products: Product[] = useMemo(() => getProducts(), []);
+
   const filteredProducts = useMemo(() => {
-    return data.filter((product) => {
+    return products.filter((product) => {
       const matchesCategory =
         selectedCategory === "All" || product.category === selectedCategory;
 

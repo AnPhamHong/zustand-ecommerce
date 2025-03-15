@@ -12,6 +12,7 @@ export interface Product {
   company: string;
   colors: string[];
   category: string;
+  id: string;
 }
 
 /** Trả về true/false ngẫu nhiên */
@@ -117,24 +118,39 @@ function randomImage() {
   return imagePool[randomInt(0, imagePool.length - 1)];
 }
 
-/** Tạo mảng 50 sản phẩm ngẫu nhiên */
-export const data: Product[] = Array.from({ length: 50 }).map(() => {
-  const category = categories[randomInt(0, categories.length - 1)];
-  const comp = companies[randomInt(0, companies.length - 1)];
-  const oldPrice = randomInt(80, 200);
-  const price = randomInt(50, oldPrice);
+export const generateProducts = () =>
+  Array.from({ length: 50 }).map((_, idx) => {
+    const category = categories[randomInt(0, categories.length - 1)];
+    const comp = companies[randomInt(0, companies.length - 1)];
+    const oldPrice = randomInt(80, 200);
+    const price = randomInt(50, oldPrice);
 
-  return {
-    isSale: randomBoolean(),
-    isNew: randomBoolean(),
-    img: randomImage(),
-    title: `${comp} ${randomTitle()}`,
-    rating: getRandomRating(),
-    reviews: randomInt(50, 500),
-    oldPrice,
-    price,
-    company: comp,
-    colors: randomColors(),
-    category,
-  };
-});
+    return {
+      isSale: randomBoolean(),
+      isNew: randomBoolean(),
+      img: randomImage(),
+      title: `${comp} ${randomTitle()}`,
+      rating: getRandomRating(),
+      reviews: randomInt(50, 500),
+      oldPrice,
+      price,
+      company: comp,
+      colors: randomColors(),
+      category,
+      id: `PROD-ENP-${idx}`,
+    };
+  });
+
+export function getProducts(): Product[] {
+  const saved = localStorage.getItem("products-data");
+  if (saved) {
+    try {
+      return JSON.parse(saved) as Product[];
+    } catch (error) {
+      console.error("Error parsing saved products:", error);
+    }
+  }
+  const products = generateProducts();
+  localStorage.setItem("products-data", JSON.stringify(products));
+  return products;
+}

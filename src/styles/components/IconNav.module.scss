@@ -5,7 +5,7 @@
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
-  > svg {
+  svg {
     color: $color-text-inverse;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -21,4 +21,25 @@
       transform: scale(1.2) rotate(5deg); // Scale up and rotate 5 degrees
     }
   }
+}
+
+.heart-container {
+  position: relative;
+  display: flex;
+}
+.heart-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: $color-price;
+  color: $color-text-inverse;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
