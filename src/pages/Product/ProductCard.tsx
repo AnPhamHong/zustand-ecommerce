@@ -1,36 +1,21 @@
-import { JSX } from "react";
-import { AiFillStar } from "react-icons/ai";
 import { getColorFromName } from "../../utils/getColorFromName";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
-
-type ProductProps = {
-  isSale: boolean;
-  isNew: boolean;
-  img: string;
-  title: string;
-  star: JSX.Element;
-  reviews: number;
-  prevPrice: string;
-  newPrice: string;
-  company: string;
-  color: string;
-  category: string;
-};
+import { Product } from "../../db/data";
+import renderStar from "../../utils/getStar";
 
 const ProductCard = ({
   isSale,
   isNew,
   img,
   title,
-  //   star,
+  rating,
   reviews,
-  prevPrice,
-  newPrice,
+  price,
+  oldPrice,
   //   company,
-  color,
+  colors,
 }: //   category,
-ProductProps) => {
-  console.log(isSale ? "sale" : isNew ? "new" : "");
+Product) => {
   return (
     <div className="card-container">
       <div className="card-img-wrapper">
@@ -45,22 +30,21 @@ ProductProps) => {
       <div className="card-details">
         <div className="card-info">
           <div className="card-color">
-            {color &&
-              color
-                .split(" ")
-                .map((color) => (
-                  <div style={{ backgroundColor: getColorFromName(color) }} />
-                ))}
+            {colors.length &&
+              colors.map((color, idx) => (
+                <div
+                  key={idx}
+                  style={{ backgroundColor: getColorFromName(color) }}
+                />
+              ))}
           </div>
           <p className="card-title">{title}</p>
           <div className="card-price">
-            <span className="card-price-current">{prevPrice}</span>
-            <span className="card-price-prev">${newPrice}</span>
+            <span className="card-price-current">${price}</span>
+            <span className="card-price-prev">${oldPrice}</span>
           </div>
           <div className="card-review">
-            {[...Array(5)].map((_, i) => (
-              <AiFillStar key={i} />
-            ))}
+            {renderStar(rating)}
 
             <span className="total-reviews">({reviews} reviews)</span>
           </div>

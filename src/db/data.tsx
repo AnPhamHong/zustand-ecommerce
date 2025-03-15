@@ -1,393 +1,140 @@
-import { JSX } from "react";
-import { AiFillStar } from "react-icons/ai";
+import getRandomRating from "../utils/getRating";
 
-interface Product {
+export interface Product {
   isSale: boolean;
   isNew: boolean;
   img: string;
   title: string;
-  star: JSX.Element;
+  rating: number;
   reviews: number;
-  prevPrice: string;
-  newPrice: string;
+  oldPrice: number;
+  price: number;
   company: string;
-  color: string;
+  colors: string[];
   category: string;
 }
 
-const getStar = () => <AiFillStar className="rating-star" />;
+/** Trả về true/false ngẫu nhiên */
+function randomBoolean(): boolean {
+  return Math.random() > 0.5;
+}
 
-export const data: Product[] = [
-  {
-    isSale: false,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg",
-    title: "Nike Air Monarch IV",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Nike",
-    color: "white red brown",
-    category: "sneakers",
-  },
-  {
-    isSale: false,
-    isNew: false,
-    img: "https://m.media-amazon.com/images/I/519MRhRKGFL._AC_UX575_.jpg",
-    title: "Nike Air Vapormax Plus",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Nike",
-    color: "red yellow green",
-    category: "sneakers",
-  },
+/** Trả về số nguyên ngẫu nhiên trong [min, max] */
+function randomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/51+P9uAvb1L._AC_UY695_.jpg",
-    title: "Nike Waffle One Sneaker",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Nike",
-    color: "green brown black",
-    category: "sneakers",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71oEKkghg-L._AC_UX575_.jpg",
-    title: "Nike Running Shoe",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Adidas",
-    color: "black blue",
-    category: "sneakers",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img:
-      "https://m.media-amazon.com/images/I/41M54ztS6IL._AC_SY625._SX._UX._SY._UY_.jpg",
-    title: "Flat Slip On Pumps",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Vans",
-    color: "green black",
-    category: "flats",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71zKuNICJAL._AC_UX625_.jpg",
-    title: "Knit Ballet Flat",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$50",
-    company: "Adidas",
-    color: "black purple",
-    category: "flats",
-  },
+/** Danh mục sản phẩm (bạn có thể thêm/bớt) */
+const categories = ["Sneakers", "Flats", "Sandals", "Heels"];
 
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/61V9APfz97L._AC_UY695_.jpg",
-    title: "Loafer Flats",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$50",
-    company: "Vans",
-    color: "white black",
-    category: "flats",
-  },
+/** Danh sách hãng (bạn có thể thêm/bớt) */
+const companies = ["Nike", "Adidas", "Vans", "Puma"];
 
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71VaQ+V6XnL._AC_UY695_.jpg",
-    title: "Nike Zoom Freak",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Nike",
-    color: "green white",
-    category: "sneakers",
-  },
-
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/61-cBsLhJHL._AC_UY695_.jpg",
-    title: "Nike Men's Sneaker",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Adidas",
-    color: "blue green black",
-    category: "sneakers",
-  },
-
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
-    title: "PUMA BLACK-OCE",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$150",
-    company: "Puma",
-    color: "green",
-    category: "sneakers",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71E75yRwCDL._AC_UY575_.jpg",
-    title: "Pacer Future Sneaker",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$150",
-    company: "Puma",
-    color: "red green",
-    category: "sneakers",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71jeoX0rMBL._AC_UX575_.jpg",
-    title: "Unisex-Adult Super",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$150",
-    company: "Puma",
-    color: "black white",
-    category: "sneakers",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/61TM6Q9dvxL._AC_UX575_.jpg",
-    title: "Roma Basic Sneaker",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$150",
-    company: "Puma",
-    color: "white",
-    category: "sneakers",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/7128-af7joL._AC_UY575_.jpg",
-    title: "Pacer Future Doubleknit",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$150",
-    company: "Puma",
-    color: "black",
-    category: "sneakers",
-  },
-
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
-    title: "Fusion Evo Golf Shoe",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$100",
-    company: "Puma",
-    color: "green crimson",
-    category: "sneakers",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/719gdz8lsTS._AC_UX575_.jpg",
-    title: "Rainbow Chex Skate",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$100",
-    company: "Vans",
-    color: "red yellow",
-    category: "flats",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg",
-    title: "Low-Top Trainers",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$100",
-    company: "Vans",
-    color: "white pink",
-    category: "sandals",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71pf7VFs9CL._AC_UX575_.jpg",
-    title: "Vans Unisex Low-Top",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$100",
-    company: "Vans",
-    color: "blue gray",
-    category: "sandals",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/61N4GyWcHPL._AC_UY575_.jpg",
-    title: "Classic Bandana Sneakers",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$50",
-    company: "Nike",
-    color: "black violet",
-    category: "sandals",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/61bncQ44yML._AC_UX695_.jpg",
-    title: "Chunky High Heel",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$50",
-    company: "Vans",
-    color: "black violet gray",
-    category: "heels",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71czu7WgGuL._AC_UY695_.jpg",
-    title: "Slip On Stiletto High Heel",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$100",
-    company: "puma",
-    color: "black purple",
-    category: "heels",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/61men05KRxL._AC_UY625_.jpg",
-    title: "DREAM PAIRS Court Shoes",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$150",
-    company: "Nike",
-    color: "red",
-    category: "heels",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/519MRhRKGFL._AC_UX575_.jpg",
-    title: "Nike Air Vapormax Plus",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Nike",
-    color: "red",
-    category: "sneakers",
-  },
-
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/51PGWTXgf-L._AC_UY625_.jpg",
-    title: "Low Mid Block Heels",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$200",
-    company: "Nike",
-    color: "black",
-    category: "heels",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/616sA5XUKtL._AC_UY675_.jpg",
-    title: "Chunky High Heel",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$50",
-    company: "Adidas",
-    color: "black",
-    category: "heels",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71h5+MbEK7L._AC_UY625_.jpg",
-    title: "Amore Fashion Stilettos",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$150",
-    company: "Adidas",
-    color: "white black purple gray",
-    category: "heels",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/61uw5RDxKQL._AC_UY625_.jpg",
-    title: "Bridal Sandals Glitter",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$50",
-    company: "Adidas",
-    color: "black",
-    category: "heels",
-  },
-  {
-    isSale: true,
-    isNew: true,
-    img: "https://m.media-amazon.com/images/I/71yhoZP0l6L._AC_UY695_.jpg",
-    title: "Wedding Prom Bridal",
-    star: getStar(),
-    reviews: 342,
-    prevPrice: "$140,00",
-    newPrice: "$50",
-    company: "Adidas",
-    color: "black white blue",
-    category: "flats",
-  },
+/** Màu sắc có thể có */
+const colorPool = [
+  "white",
+  "black",
+  "red",
+  "blue",
+  "green",
+  "brown",
+  "purple",
+  "yellow",
+  "gray",
+  "pink",
+  "violet",
+  "crimson",
 ];
+
+/** Trả về mảng màu ngẫu nhiên (1-3 màu), không lặp lại */
+function randomColors(): string[] {
+  const size = randomInt(1, 3);
+  const arr: string[] = [];
+  while (arr.length < size) {
+    const c = colorPool[randomInt(0, colorPool.length - 1)];
+    if (!arr.includes(c)) {
+      arr.push(c);
+    }
+  }
+  return arr;
+}
+
+/** Tên sản phẩm mẫu (bạn có thể thêm/bớt) */
+const titlePool = [
+  "Air Monarch IV",
+  "Air Vapormax Plus",
+  "Waffle One Sneaker",
+  "Running Shoe",
+  "Flat Slip On Pumps",
+  "Knit Ballet Flat",
+  "Loafer Flats",
+  "Zoom Freak",
+  "Men's Sneaker",
+  "Pacer Future Sneaker",
+  "Unisex-Adult Super",
+  "Roma Basic Sneaker",
+  "Fusion Evo Golf Shoe",
+  "Rainbow Chex Skate",
+  "Low-Top Trainers",
+  "Classic Bandana Sneakers",
+  "Chunky High Heel",
+  "Slip On Stiletto High Heel",
+  "Court Shoes",
+  "Low Mid Block Heels",
+  "Amore Fashion Stilettos",
+  "Bridal Sandals Glitter",
+  "Wedding Prom Bridal",
+];
+
+/** Trả về 1 tên sản phẩm ngẫu nhiên */
+function randomTitle() {
+  return titlePool[randomInt(0, titlePool.length - 1)];
+}
+
+/** Danh sách ảnh mẫu (bạn có thể thêm/bớt) */
+const imagePool = [
+  "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg",
+  "https://m.media-amazon.com/images/I/519MRhRKGFL._AC_UX575_.jpg",
+  "https://m.media-amazon.com/images/I/51+P9uAvb1L._AC_UY695_.jpg",
+  "https://m.media-amazon.com/images/I/71oEKkghg-L._AC_UX575_.jpg",
+  "https://m.media-amazon.com/images/I/41M54ztS6IL._AC_SY625._SX._UX._SY._UY_.jpg",
+  "https://m.media-amazon.com/images/I/71zKuNICJAL._AC_UX625_.jpg",
+  "https://m.media-amazon.com/images/I/61V9APfz97L._AC_UY695_.jpg",
+  "https://m.media-amazon.com/images/I/71VaQ+V6XnL._AC_UY695_.jpg",
+  "https://m.media-amazon.com/images/I/61-cBsLhJHL._AC_UY695_.jpg",
+  "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
+  "https://m.media-amazon.com/images/I/71E75yRwCDL._AC_UY575_.jpg",
+  "https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg",
+  "https://m.media-amazon.com/images/I/61men05KRxL._AC_UY625_.jpg",
+  "https://m.media-amazon.com/images/I/51PGWTXgf-L._AC_UY625_.jpg",
+  "https://m.media-amazon.com/images/I/71h5+MbEK7L._AC_UY625_.jpg",
+  "https://m.media-amazon.com/images/I/71yhoZP0l6L._AC_UY695_.jpg",
+  "https://m.media-amazon.com/images/I/71czu7WgGuL._AC_UY695_.jpg",
+];
+
+/** Trả về 1 link ảnh ngẫu nhiên */
+function randomImage() {
+  return imagePool[randomInt(0, imagePool.length - 1)];
+}
+
+/** Tạo mảng 50 sản phẩm ngẫu nhiên */
+export const data: Product[] = Array.from({ length: 50 }).map(() => {
+  const category = categories[randomInt(0, categories.length - 1)];
+  const comp = companies[randomInt(0, companies.length - 1)];
+  const oldPrice = randomInt(80, 200);
+  const price = randomInt(50, oldPrice);
+
+  return {
+    isSale: randomBoolean(),
+    isNew: randomBoolean(),
+    img: randomImage(),
+    title: `${comp} ${randomTitle()}`,
+    rating: getRandomRating(),
+    reviews: randomInt(50, 500),
+    oldPrice,
+    price,
+    company: comp,
+    colors: randomColors(),
+    category,
+  };
+});

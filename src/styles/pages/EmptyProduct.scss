@@ -1,0 +1,32 @@
+
+.no-product-container {
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  
+    .no-product-image {
+      max-width: 300px;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .reset-filters-btn {
+      background-color: #6B5EA8;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: darken(#6B5EA8, 10%);
+      }
+    }
+  }
+  

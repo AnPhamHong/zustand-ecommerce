@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SearchInput from "../components/SearchInput";
-import IconNav from "../components/IconNav";
+import SearchInput from "../../components/SearchInput";
+import IconNav from "../../components/IconNav";
 
 const Nav = () => {
   const [keySearch, setKeySearch] = useState<string>("");
