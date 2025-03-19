@@ -1,4 +1,4 @@
-@use "../variables" as *;
+@use "../abstracts/variables" as *;@use "sass:color";
 
 .iconNav {
   display: flex;
@@ -6,7 +6,7 @@
   gap: 1rem;
   align-items: center;
   svg {
-    color: $color-text-inverse;
+    color: $color-text;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
 
@@ -16,8 +16,7 @@
     // }
 
     &:hover {
-      color: lighten($color-accent, 20%); // Sáng hơn màu accent
-
+      color: color.scale($color-accent, $lightness: 20%);
       transform: scale(1.2) rotate(5deg); // Scale up and rotate 5 degrees
     }
   }
@@ -27,6 +26,7 @@
   position: relative;
   display: flex;
 }
+
 .heart-badge {
   position: absolute;
   top: -10px;

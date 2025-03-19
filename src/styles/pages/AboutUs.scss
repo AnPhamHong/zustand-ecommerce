@@ -1,0 +1,64 @@
+@use "../abstracts/variables"as *;
+@use "sass:color";
+
+.about-container-sub {
+  padding: 50px 80px;
+  .about-container {
+    gap: 3rem;
+    width: 100%;
+    max-width: min(100%, 1200px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &-left {
+      flex: 1;
+  
+      img {
+        height: auto;
+        min-height: 100%;
+        max-width: 100%;
+        border-radius: 0.5rem;
+      }
+    }
+  
+    &-right {
+      flex: 1;
+      letter-spacing: 2px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1.2rem;
+  
+      h3.about-subtitle {
+        font-size: 0.8rem;
+        color: #f6aa28;
+      }
+  
+      h2.about-title {
+        color: #262b2c;
+        font-size: 2rem;
+      }
+  
+      p.about-description {
+        font-size: 1.1rem;
+        color: color.scale($color-text, $lightness: -10%);
+        line-height: 1.6;
+      }
+  
+      div.about-read-more {
+        cursor: pointer;
+        text-transform: uppercase;
+        border-bottom: 2px solid #f6aa28;
+        width: fit-content;
+        transition: all 0.3s;
+        font-weight: bold;
+  
+        &:hover {
+          border-bottom: 2px solid #000;
+        }
+      }
+    }
+  }
+}

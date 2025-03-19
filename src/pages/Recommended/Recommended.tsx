@@ -10,6 +10,11 @@ const Recommended = () => {
     "Adidas",
     "Puma",
     "Nike",
+    "Skechers",
+    "Under Armour",
+    "New Balance",
+    "Bruno Marc",
+    "UIN",
   ];
 
   return (

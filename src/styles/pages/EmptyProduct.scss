@@ -1,4 +1,4 @@
-
+@use "sass:color";
 .no-product-container {
     text-align: center;
     padding: 2rem;
@@ -25,7 +25,8 @@
       transition: background-color 0.3s ease;
   
       &:hover {
-        background-color: darken(#6B5EA8, 10%);
+        background-color: color.scale(#6B5EA8, $lightness: -10%);
+
       }
     }
   }

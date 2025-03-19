@@ -1,4 +1,5 @@
-@use "./variables" as *;
+@use "./abstracts/variables" as *;
+@use "sass:color";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
@@ -53,10 +54,11 @@ h3 {
   padding: 1.5rem;
 
   .sidebar {
-    width: 250px;
+    width: 300px;
     background: $color-sidebar;
     border-radius: 12px;
     padding: 2rem;
+    height: fit-content;
 
     .filters-container {
       gap: 2.5rem;
@@ -73,7 +75,7 @@ h3 {
 
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Chuyển layout thành cột */
+    flex-direction: column; 
   }
 
   .sidebar {
@@ -81,18 +83,21 @@ h3 {
   }
 }
 
-.nav-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
-  z-index: 999;
-  position: sticky;
-  top: 0;
-  background: $color-header;
-  color: $color-text-inverse;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  background: linear-gradient(90deg, $color-header, $cursor-color);
 
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }

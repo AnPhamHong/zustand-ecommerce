@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
+.above-header-site {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background: linear-gradient(90deg, $color-header, $cursor-color);
+
+  div {
+    padding: 0.8rem;
+  }
+  p {
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+.below-header-site {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4px 35px;
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  background: $color-header;
+  color: $color-text-inverse;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f1f1ef;
+
+  .header-menu-container-left, .header-menu-container-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    .header-menu {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      text-transform: uppercase;
+      gap: 2rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+
+      a {
+        color: #979a9b;
+        text-decoration: none;
+
+        &:hover {
+          color: color.scale($color-accent, $lightness: 20%);
+          transform: scale(.9); 
+        }
+      }
+    }
+
+    .header-logo-store {
+      img {
+        min-width: 100px;
+        max-width: 200px;
+        height: 100px;
+      }
+    }
+  }
+}
