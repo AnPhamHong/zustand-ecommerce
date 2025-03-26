@@ -1,0 +1,11 @@
+export { default as promotion_01 } from "./promotion_01.png";
+export { default as promotion_02 } from "./promotion_02.png";
+export { default as promotion_03 } from "./promotion_03.png";
+export { default as promotion_04 } from "./promotion_04.png";
+export { default as promotion_05 } from "./promotion_05.png";
+export { default as promotion_06 } from "./promotion_06.png";
+export { default as promotion_07 } from "./promotion_07.png";
+export { default as promotion_08 } from "./promotion_08.png";
+export { default as promotion_09 } from "./promotion_09.png";
+export { default as promotion_10 } from "./promotion_10.png";
+export { default as promotion_11 } from "./promotion_11.png";

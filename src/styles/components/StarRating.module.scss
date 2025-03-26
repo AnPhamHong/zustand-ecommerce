@@ -1,0 +1,24 @@
+.star-rating {
+  display: flex;
+  font-size: 2rem;
+  color: #ccc;
+}
+
+.star {
+  transition: color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.full {
+  color: #ffcc00;
+}
+
+.half {
+  background: linear-gradient(90deg, #ffcc00 50%, #ccc 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

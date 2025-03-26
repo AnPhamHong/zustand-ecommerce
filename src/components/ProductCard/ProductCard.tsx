@@ -1,8 +1,8 @@
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
-import renderStar from "../../utils/getStar";
 import { useFavoritesStore } from "../../store/favoriteStore";
 import { Product } from "../../types/product";
 import { useCartStore } from "../../store/cartStore";
+import StarRating from "../UI/StarRating";
 
 const ProductCard = (props: Product) => {
   const {
@@ -53,7 +53,7 @@ const ProductCard = (props: Product) => {
             <span className="card-price-prev">${oldPrice}</span>
           </div>
           <div className="card-review">
-            {renderStar(rating)}
+            <StarRating rating={rating} />
 
             <span className="total-reviews">({reviews} reviews)</span>
           </div>

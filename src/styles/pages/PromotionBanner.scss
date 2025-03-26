@@ -1,5 +1,81 @@
 .promotion-banner {
-    img {
-        width: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #e8d3c1;
+
+  .splide {
+    border-radius: 12px;
+    padding: 50px 80px;
+  }
+
+  .splide__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .splide__slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .splide__slide:hover img,
+  .splide__slide.is-active img {
+    transform: scale(0.9);
+  }
+
+  /* Custom pagination dots */
+  .splide__pagination {
+    bottom: 0;
+    margin-bottom: 1rem;
+  }
+
+  .splide__pagination__page {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: #5b3a29;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background: #8c5331;
+      transform: scale(1.2);
     }
+  }
+
+  .splide__pagination__page.is-active {
+    background: #8c5331;
+    width: 16px;
+    height: 16px;
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .promotion-banner {
+    .splide__pagination__page {
+      width: 8px;
+      height: 8px;
+
+      &:hover {
+        background: #8c5331;
+        transform: scale(1.1);
+      }
+    }
+    .splide__pagination__page.is-active {
+        width: 8px;
+        height: 8px;
+        transform: scale(1.5);
+      }
+  }
 }

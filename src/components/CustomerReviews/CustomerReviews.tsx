@@ -1,8 +1,10 @@
 import "../../styles/pages/CustomerReviews.scss";
+import StarRating from "../UI/StarRating";
 
 const reviews = [
   {
     id: 1,
+    rating: 5,
     name: "JULIA KEYS",
     text:
       "“Felis semper duis massa scelerisque ac amet porttitor ac tellus venenatis aliquam varius mauris integer”",
@@ -11,6 +13,7 @@ const reviews = [
   },
   {
     id: 2,
+    rating: 4.3,
     name: "LUIS ADRIAN",
     text:
       "“Non malesuada fringilla non varius odio in id pellentesque aliquam volutpat sapien faucibus ”",
@@ -19,6 +22,7 @@ const reviews = [
   },
   {
     id: 3,
+    rating: 4.9,
     name: "MARIA ANNA",
     text: "“Tortor suspendisse tincidunt accumsan platea pellentesque hac.”",
     img:
@@ -35,7 +39,9 @@ function CustomerReviews() {
           {reviews.map((review) => {
             return (
               <div className="review-card" key={review.id}>
-                <div className="review-stars">★★★★★</div>
+                <div className="review-stars">
+                  <StarRating rating={review.rating} />
+                </div>
                 <p className="review-text">{review.text}</p>
                 <div className="review-user">
                   <img src={review.img} alt={review.name} />

@@ -4,6 +4,7 @@
   padding: 50px 80px;
   max-width: min(100%, 1200px);
   margin: 0 auto;
+  background: #fff5e1;
 
   .best-seller-title {
     display: flex;
@@ -12,8 +13,7 @@
     padding: 2rem 0;
 
     h2.best-seller-subtitle {
-      font-size: 22px;
-      color: #262b2c;
+      font-size: 1.2rem;
       text-transform: capitalize;
       margin-bottom: auto;
       font-weight: 500;
@@ -22,14 +22,15 @@
     div.best-seller-view-all {
       cursor: pointer;
       text-transform: uppercase;
-      border-bottom: 2px solid #f6aa28;
+      border-bottom: 2px solid #A53D00;
       width: fit-content;
       transition: all 0.3s;
       font-weight: bold;
       letter-spacing: 2px;
+      transition: 0.3s;
 
       &:hover {
-        border-bottom: 2px solid #000;
+        border-bottom: 2px solid #E68F65;
       }
     }
   }
@@ -63,10 +64,13 @@
           transition: transform 0.3s ease;
 
           &:hover {
+            border: 1px solid #e68f65;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             + .quick-view {
               opacity: 1;
               visibility: visible;
               transform: translateY(0);
+              border-bottom: 1px solid #E68F65;
             }
           }
         }

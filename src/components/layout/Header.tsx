@@ -1,44 +1,57 @@
-import "../../styles/pages/Header.scss";
+import "@/styles/pages/Header.scss";
 import IconNav from "../../components/UI/IconNav";
 import logoStore from "../../assets/logo-store.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { CiMenuBurger } from "react-icons/ci";
+import { AiOutlineClose } from "react-icons/ai";
 
-const Nav = () => {
-  // const [keySearch, setKeySearch] = useState<string>("");
-
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   return setKeySearch(event.target.value);
-  // };
+const Nav = ({
+  isOpen,
+  onChangeOpen,
+}: {
+  isOpen: boolean;
+  onChangeOpen: (newStatus: boolean) => void;
+}) => {
   return (
-    <div className="flex-row below-header-site">
-      {/* <SearchInput
-        placeholder="Enter your search shoes..."
-        onChange={handleChange}
-        value={keySearch}
-      /> */}
-      <div className="header-menu-container-left">
-        <div className="header-logo-store">
-          <img src={logoStore} alt="Borcelle shoes store" />
+    <div className={`below-header-site ${isOpen ? "mobile-active" : ""}`}>
+      <div className="header-container">
+        <div className="header-menu-container-left">
+          <img
+            src={logoStore}
+            alt="Borcelle shoes store"
+            className="header-logo-store"
+          />
+          {/* <div className={`header-menu ${isOpen ? "mobile-active" : ""}`}></div> */}
         </div>
-        <div className="header-menu">
-          <Link to="/shoes">Shoes</Link>
-          <Link to="/collection">Collection</Link>
-          <Link to="/look-book">Lookbook</Link>
-          <Link to="/sale">Sale</Link>
+        <div className="header-menu-container-right">
+          <div className={`header-menu ${isOpen ? "mobile-active" : ""}`}>
+            <Link to="/shoes">Shoes</Link>
+            <Link to="/collection">Collection</Link>
+            <Link to="/look-book">Lookbook</Link>
+            <Link to="/sale">Sale</Link>
+            <Link to="/story">Our story</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+          <div className="header-actions">
+            <IconNav />
+          </div>
         </div>
-      </div>
-
-      <div className="header-menu-container-right">
-        <div className="header-menu">
-          <Link to="/story">Our story</Link>
-          <Link to="/contact">Contact</Link>
+        {/* Hamburger menu button */}
+        <div
+          onClick={() => onChangeOpen(!isOpen)}
+          className={`hamburger-menu ${isOpen ? "mobile-active" : ""}`}
+        >
+          {!isOpen ? <CiMenuBurger size={32} /> : <AiOutlineClose size={32} />}
         </div>
-        <IconNav />
       </div>
     </div>
   );
 };
+
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
   return (
     <>
       <div className="above-header-site above-header-bar">
@@ -46,7 +59,10 @@ function Header() {
           <p>Free Express Shipping on all orders with all duties included</p>
         </div>
       </div>
-      <Nav />
+      <Nav
+        isOpen={isMenuOpen}
+        onChangeOpen={() => setIsMenuOpen(!isMenuOpen)}
+      />
     </>
   );
 }

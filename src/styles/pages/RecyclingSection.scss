@@ -14,13 +14,14 @@
       img {
         border-radius: 50%;
         border: 2px dashed #6e7051;
+        width:100%;
       }
     }
 
     .recycling-content {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 5rem;
       width: 50%;
 
       .recycling-description {
@@ -31,12 +32,37 @@
         text-align: justify;
       }
 
-      .recycling-icons{
+      .recycling-icons {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
+        img {
+          width: calc(100%/3 - 1rem);
+          max-width: 100px;
+        }
       }
     }
   }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .recycling-container-sub {
+    .recycling-container {
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+
+      .recycling-content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
 }

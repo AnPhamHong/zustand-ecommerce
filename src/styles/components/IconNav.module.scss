@@ -6,7 +6,7 @@
   gap: 1rem;
   align-items: center;
   svg {
-    color: $color-text;
+    color: #FFF5E1;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
 
@@ -16,7 +16,7 @@
     // }
 
     &:hover {
-      color: color.scale($color-accent, $lightness: 20%);
+      color: color.scale(#E68F65, $lightness: 20%);
       transform: scale(1.2) rotate(5deg); // Scale up and rotate 5 degrees
     }
   }

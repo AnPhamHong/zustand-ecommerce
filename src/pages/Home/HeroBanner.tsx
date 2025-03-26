@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/pages/HeroBanner.scss";
+import "@/styles/pages/HeroBanner.scss";
 
 const HeroBanner: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const HeroBanner: React.FC = () => {
       {/* Content */}
       <div className="hero-banner__content">
         <h1 className="hero-banner__title">Love the Borcelle we walk on</h1>
-        <p className="hero-banner_description">
+        <p className="hero-banner__description">
           Bibendum fermentum, aenean donec pretium aliquam blandit tempor
           imperdiet arcu arcu ut nunc in dictum mauris at ut.
         </p>

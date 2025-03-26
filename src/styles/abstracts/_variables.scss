@@ -33,3 +33,19 @@ $color-sale: #E63946;
 // Color Variant Gradient
 $color-variant-start: #D4A373; // Vàng nâu
 $color-variant-end: #B5838D;   // Hồng đất
+// Màu sắc chính
+$primary-color: #4CBFC9; // Xanh ngọc - Màu chủ đạo, hiện đại
+$secondary-color: #437DAD; // Xanh navy nhẹ - Sang trọng, chuyên nghiệp
+$accent-color: #A13763; // Đỏ rượu vang - Tạo điểm nhấn mạnh mẽ
+$highlight-color: #705A8A; // Tím pastel - Huyền bí, tinh tế
+$warm-tone: #8E5D6A; // Hồng đất - Mềm mại, ấm áp
+
+// Màu văn bản
+$text-color: #FFFFFF; // Màu chữ chính - Trắng
+$secondary-text-color: #8E5D6A; // Màu chữ phụ - Hồng đất
+
+// Gradient nền
+$background-gradient: linear-gradient(135deg, $primary-color, $highlight-color);
+
+// Hiệu ứng hover
+$hover-effect: $highlight-color;

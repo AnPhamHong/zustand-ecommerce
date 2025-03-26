@@ -62,3 +62,23 @@
     }
   }
 }
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .about-container-sub {
+    padding: 2rem;
+    .about-container {
+      flex-direction: column;
+      p.about-description {
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+}

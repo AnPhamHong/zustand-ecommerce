@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/pages/BestSeller.scss";
+import "@/styles/pages/BestSeller.scss";
 import { getProducts } from "../../db/data";
 import { Product } from "../../types/product";
 
