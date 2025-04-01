@@ -92,6 +92,10 @@
   .hamburger-menu {
     display: none;
   }
+
+  .header-actions.only-cart {
+    display: none;
+  }
 }
 
 /* Responsive cho mobile */
@@ -100,22 +104,28 @@
     display: none;
   }
   .below-header-site {
+    .header-container {
+      display: flex;
+      flex-direction: row-reverse;
+
+      .header-menu-container-left {
+        justify-content: center;
+      }
+    }
     &:has(.header-menu.mobile-active) {
       height: 100vh;
       background: #8e5d6a; // Thay đổi màu nền hoặc kiểu khác
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-    
+
     .header-menu-container-left {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       width: 100%;
-      img.header-logo-store {
-        min-width: 80px;
-        max-width: 200px;
-        height: 80px;
-        filter: brightness(0) invert(1);
+
+      &:has(img.header-logo-store.mobile-active) {
+        display: none;
       }
     }
 
@@ -182,6 +192,9 @@
         top: 2rem;
         right: 2rem;
       }
+    }
+    .header-actions.only-cart {
+      display: block;
     }
   }
 }

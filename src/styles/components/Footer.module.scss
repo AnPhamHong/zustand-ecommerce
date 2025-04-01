@@ -181,6 +181,9 @@
 
 @media (max-width: 768px) {
   .footer {
+    .footerSpace {
+      padding: 0 2rem;
+    }
     .topSection {
       flex-wrap: wrap;
     }
@@ -194,6 +197,7 @@
       flex-direction: column;
       justify-content: center;
       gap: 1rem;
+      padding: 0 2rem;
 
       .left {
         text-align: center;

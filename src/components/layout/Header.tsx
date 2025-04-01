@@ -16,13 +16,18 @@ const Nav = ({
   return (
     <div className={`below-header-site ${isOpen ? "mobile-active" : ""}`}>
       <div className="header-container">
+        {!isOpen ? (
+          <div className="header-actions only-cart">
+            <IconNav isOnlyCart={true} />
+          </div>
+        ) : null}
+
         <div className="header-menu-container-left">
           <img
             src={logoStore}
             alt="Borcelle shoes store"
-            className="header-logo-store"
+            className={`header-logo-store ${isOpen ? "mobile-active" : ""}`}
           />
-          {/* <div className={`header-menu ${isOpen ? "mobile-active" : ""}`}></div> */}
         </div>
         <div className="header-menu-container-right">
           <div className={`header-menu ${isOpen ? "mobile-active" : ""}`}>

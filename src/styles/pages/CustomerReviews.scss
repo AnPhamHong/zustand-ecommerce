@@ -7,7 +7,7 @@
     text-align: center;
 
     .reviews-title {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 500;
       margin-bottom: 3rem;
     }
@@ -33,7 +33,7 @@
           color: #a53d00;
         }
         .review-text {
-          font-size: 1rem;
+          font-size: 1.1rem;
           font-weight: 600;
           text-align: left;
           line-height: 2;
@@ -51,7 +51,7 @@
           }
           span {
             color: #6e7051;
-            font-size: 0.9rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
           }
@@ -87,7 +87,4 @@
 }
 
 @media (max-width: 480px) {
-  
-  .reviews-container-sub {
-  }
 }

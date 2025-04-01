@@ -13,7 +13,7 @@
     padding: 2rem 0;
 
     h2.best-seller-subtitle {
-      font-size: 1.2rem;
+      font-size: 1.8rem;
       text-transform: capitalize;
       margin-bottom: auto;
       font-weight: 500;
@@ -22,7 +22,7 @@
     div.best-seller-view-all {
       cursor: pointer;
       text-transform: uppercase;
-      border-bottom: 2px solid #A53D00;
+      border-bottom: 2px solid #a53d00;
       width: fit-content;
       transition: all 0.3s;
       font-weight: bold;
@@ -30,7 +30,7 @@
       transition: 0.3s;
 
       &:hover {
-        border-bottom: 2px solid #E68F65;
+        border-bottom: 2px solid #e68f65;
       }
     }
   }
@@ -70,7 +70,7 @@
               opacity: 1;
               visibility: visible;
               transform: translateY(0);
-              border-bottom: 1px solid #E68F65;
+              border-bottom: 1px solid #e68f65;
             }
           }
         }
@@ -154,5 +154,22 @@
         }
       }
     }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .best-seller-container {
+    padding: 2rem;
+
+    .product-list {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      .product-card {
+        align-items: center;
+      }
+  }
   }
 }

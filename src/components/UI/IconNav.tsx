@@ -2,12 +2,22 @@ import { CiHeart, CiShoppingCart, CiUser } from "react-icons/ci";
 import styles from "../../styles/components/IconNav.module.scss";
 import { useFavoritesStore } from "../../store/favoriteStore";
 import { useCartStore } from "../../store/cartStore";
+interface IconNavProps {
+  isOnlyCart?: boolean;
+}
 
-const IconNav = () => {
+const IconNav = ({ isOnlyCart }: IconNavProps) => {
   const { favorites } = useFavoritesStore();
   const { total } = useCartStore();
   const totalFavoriteItem = favorites.length ?? 0;
-  return (
+  return isOnlyCart ? (
+    <div className={styles.iconNav}>
+      <div className={styles["heart-container"]}>
+        <CiShoppingCart size={32} />
+        {total > 0 && <span className={styles["heart-badge"]}>{total}</span>}
+      </div>
+    </div>
+  ) : (
     <div className={styles.iconNav}>
       <div className={styles["heart-container"]}>
         <CiHeart size={32} />

@@ -63,6 +63,9 @@
 
 @media (max-width: 768px) {
   .promotion-banner {
+    .splide {
+      padding: 4rem 2rem;
+    }
     .splide__pagination__page {
       width: 8px;
       height: 8px;
