@@ -1,11 +1,11 @@
-import CustomerReviews from "../../components/CustomerReviews/CustomerReviews";
-import AboutUs from "../About/AboutUs";
-import BestSeller from "../Products/BestSeller";
-import NewArrivals from "../Products/NewArrivals";
-import HeroBanner from "./HeroBanner";
-import PromotionBanner from "./PromotionBanner";
-import RecyclingSection from "./RecyclingSection";
-import ShoeMaterial from "./ShoeMaterial";
+import CustomerReviews from "@/components/CustomerReviews/CustomerReviews";
+import AboutUs from "@/pages/About/AboutUs";
+import HeroBanner from "@/pages/Home/HeroBanner";
+import PromotionBanner from "@/pages/Home/PromotionBanner";
+import RecyclingSection from "@/pages/Home/RecyclingSection";
+import ShoeMaterial from "@/pages/Home/ShoeMaterial";
+import BestSeller from "@/pages/Products/BestSeller";
+import NewArrivals from "@/pages/Products/NewArrivals";
 
 const Home: React.FC = () => {
   return (

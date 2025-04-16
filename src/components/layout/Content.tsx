@@ -1,22 +1,15 @@
-// import Sidebar from "./Sidebar";
-// import Recommended from "../../pages/Recommended/Recommended";
-// import Products from "../../pages/Products/Products";
-import Home from "../../pages/Home/Home";
+import Home from "@/pages/Home/Home";
+import NotFound from "@/pages/NotFound/NotFound";
+import ProductList from "@/pages/Products/ProductList";
+import { Route, Routes } from "react-router-dom";
 
 function Content() {
   return (
-    <>
-      <Home />
-      {/* <div className="container">
-        <aside className="sidebar">
-          <Sidebar />
-        </aside>
-        <main className="content">
-          <Recommended />
-          <Products />
-        </main>
-      </div> */}
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/products" element={<ProductList />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 

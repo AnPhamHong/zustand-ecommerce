@@ -10,6 +10,8 @@
   $card-transition: transform 0.3s ease;
   $card-img-height: 220px;
   $card-img-scale: 0.8;
+  max-width: min(100%, 1200px);
+  margin: 1rem auto;
 
   .card-container {
     position: relative;

@@ -9,8 +9,8 @@ import {
   FaFacebook,
   FaTwitter,
 } from "react-icons/fa";
-import PaymentIcons from "../../assets/payment-icons.png";
-import logoStore from "../../assets/logo-store.png";
+import PaymentIcons from "@/assets/payment-icons.png";
+import logoStore from "@/assets/logo-store.png";
 
 const Footer: React.FC = () => {
   return (

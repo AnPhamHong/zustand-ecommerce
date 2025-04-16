@@ -1,7 +1,7 @@
 import React from "react";
-import "../../styles/pages/BestSeller.scss";
-import { getProducts } from "../../db/data";
-import { Product } from "../../types/product";
+import "@/styles/pages/ProductLst.scss";
+import { getProducts } from "@/db/data";
+import { Product } from "@/types/product";
 
 function shuffleArray(arr: Product[]) {
   for (let i = arr.length - 1; i > 0; i--) {

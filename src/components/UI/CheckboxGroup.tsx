@@ -1,4 +1,4 @@
-import styles from "../styles/components/RadioGroup.module.scss";
+import styles from "@/styles/components/RadioGroup.module.scss";
 interface CheckboxGroupProps<T> {
   title: string;
   options: T[];

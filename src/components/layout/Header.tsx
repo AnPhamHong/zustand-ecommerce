@@ -1,6 +1,6 @@
 import "@/styles/pages/Header.scss";
-import IconNav from "../../components/UI/IconNav";
-import logoStore from "../../assets/logo-store.png";
+import IconNav from "@/components/UI/IconNav";
+import logoStore from "@/assets/logo-store.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
@@ -31,12 +31,24 @@ const Nav = ({
         </div>
         <div className="header-menu-container-right">
           <div className={`header-menu ${isOpen ? "mobile-active" : ""}`}>
-            <Link to="/shoes">Shoes</Link>
-            <Link to="/collection">Collection</Link>
-            <Link to="/look-book">Lookbook</Link>
-            <Link to="/sale">Sale</Link>
-            <Link to="/story">Our story</Link>
-            <Link to="/contact">Contact</Link>
+            <Link to="/products" onClick={() => onChangeOpen(!isOpen)}>
+              Shoes
+            </Link>
+            <Link to="/collection" onClick={() => onChangeOpen(!isOpen)}>
+              Collection
+            </Link>
+            <Link to="/look-book" onClick={() => onChangeOpen(!isOpen)}>
+              Lookbook
+            </Link>
+            <Link to="/sale" onClick={() => onChangeOpen(!isOpen)}>
+              Sale
+            </Link>
+            <Link to="/story" onClick={() => onChangeOpen(!isOpen)}>
+              Our story
+            </Link>
+            <Link to="/contact" onClick={() => onChangeOpen(!isOpen)}>
+              Contact
+            </Link>
           </div>
           <div className="header-actions">
             <IconNav />

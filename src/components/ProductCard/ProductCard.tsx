@@ -1,8 +1,8 @@
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
-import { useFavoritesStore } from "../../store/favoriteStore";
-import { Product } from "../../types/product";
-import { useCartStore } from "../../store/cartStore";
-import StarRating from "../UI/StarRating";
+import { Product } from "@/types/product";
+import { useCartStore } from "@/store/cartStore";
+import StarRating from "@/components/UI/StarRating";
+import { useFavoritesStore } from "@/store/favoriteStore";
 
 const ProductCard = (props: Product) => {
   const {
@@ -72,7 +72,7 @@ const ProductCard = (props: Product) => {
         </button>
         <button
           className="product-btn btn-cart"
-          onClick={() => updateCart(props)}
+          onClick={() => updateCart(props, 1)}
         >
           <CiShoppingCart size={24} style={{ strokeWidth: 0.5 }} />
         </button>

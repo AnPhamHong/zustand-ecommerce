@@ -1,5 +1,5 @@
-import { Product } from "../types/product";
-import getRandomRating from "../utils/getRating";
+import { Product } from "@/types/product";
+import getRandomRating from "@/utils/getRating";
 
 /** Return a random true/false */
 function randomBoolean(): boolean {
@@ -154,12 +154,24 @@ function randomImage() {
   return imagePool[randomInt(0, imagePool.length - 1)];
 }
 
+const descriptions = [
+  "Step into comfort and style with these versatile sneakers. Designed for all-day wear, they feature a breathable upper, a cushioned sole for extra support, and a durable, non-slip outsole. Perfect for daily activities, from casual strolls to long commutes.",
+  "Experience next-level comfort with our ultra-lightweight sneakers. The advanced cushioning technology absorbs impact, reducing strain on your feet, while the high-traction rubber outsole ensures stability on any surface. The breathable mesh fabric keeps your feet cool and dry, making them ideal for all-day wear.",
+  "Stay ahead of the fashion game with these stylish sneakers. Featuring a sleek silhouette and modern colorways, they’re designed to elevate any outfit effortlessly. Whether you're hitting the streets or heading to a casual meetup, these shoes add a touch of urban flair to your look.",
+  "More than just a pair of shoes, these sneakers embody sophistication and craftsmanship. Made from premium materials, they offer unparalleled comfort and durability. The sleek, minimalist design complements any wardrobe, making them a must-have for those who appreciate quality and elegance.",
+];
+
+const getRandomDescription = () => {
+  return descriptions[Math.floor(Math.random() * descriptions.length)];
+};
+
 export const generateProducts = () =>
   Array.from({ length: 100 }).map((_, idx) => {
     const category = categories[randomInt(0, categories.length - 1)];
     const comp = companies[randomInt(0, companies.length - 1)];
     const oldPrice = randomInt(80, 200);
     const price = randomInt(50, oldPrice);
+    const desc = getRandomDescription();
 
     return {
       isSale: randomBoolean(),
@@ -172,6 +184,7 @@ export const generateProducts = () =>
       price,
       company: comp,
       category,
+      description: desc,
       id: `PROD-ENP-${idx}`,
     };
   });

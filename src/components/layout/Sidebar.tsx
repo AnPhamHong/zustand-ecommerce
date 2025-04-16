@@ -1,7 +1,7 @@
-import RadioGroup from "../UI/RadioGroup";
-import { initialMaxPrice } from "../../db/priceRanges";
-import { useFilterStore } from "../../store/filterStore";
-import { CategoryType } from "../../types/product";
+import { RadioGroup } from "@/components/UI";
+import { initialMaxPrice } from "@/db/priceRanges";
+import { useFilterStore } from "@/store/filterStore";
+import { CategoryType } from "@/types/product";
 
 const Sidebar = () => {
   const {

@@ -1,5 +1,5 @@
-import "../../styles/pages/CustomerReviews.scss";
-import StarRating from "../UI/StarRating";
+import StarRating from "@/components/UI/StarRating";
+import "@/styles/pages/CustomerReviews.scss";
 
 const reviews = [
   {

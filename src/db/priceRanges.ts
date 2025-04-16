@@ -1,5 +1,5 @@
 
-import { PriceRange } from "../types/product";
+import { PriceRange } from "@/types/product";
 
 export const initialMaxPrice = Number.MAX_SAFE_INTEGER; 
 

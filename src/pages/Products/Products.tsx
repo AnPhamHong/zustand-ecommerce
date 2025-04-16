@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
-import "../../styles/pages/Products.scss";
-import { useFilterStore } from "../../store/filterStore";
+import "@/styles/pages/Products.scss";
 import EmptyProduct from "./EmptyProduct";
-import { getProducts } from "../../db/data";
-import { Product } from "../../types/product";
-import ProductCard from "../../components/ProductCard";
+import { getProducts } from "@/db/data";
+import { Product } from "@/types/product";
+import ProductCard from "@/components/ProductCard";
+import { useFilterStore } from "@/store/filterStore";
 
 const Products: React.FC = () => {
   const {

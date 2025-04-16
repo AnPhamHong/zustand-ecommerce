@@ -1,7 +1,7 @@
 import { CiHeart, CiShoppingCart, CiUser } from "react-icons/ci";
-import styles from "../../styles/components/IconNav.module.scss";
-import { useFavoritesStore } from "../../store/favoriteStore";
-import { useCartStore } from "../../store/cartStore";
+import styles from "@/styles/components/IconNav.module.scss";
+import { useFavoritesStore } from "@/store/favoriteStore";
+import { useCartStore } from "@/store/cartStore";
 interface IconNavProps {
   isOnlyCart?: boolean;
 }

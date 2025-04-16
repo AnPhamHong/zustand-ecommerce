@@ -1,8 +1,8 @@
 import React from "react";
-import "@/styles/pages/BestSeller.scss";
-import { getProducts } from "../../db/data";
-import { Product } from "../../types/product";
-
+import "@/styles/pages/ProductLst.scss";
+import { Product } from "@/types/product";
+import { getProducts } from "@/db/data";
+import ProductItem from "@/pages/Products/ProductItem";
 function shuffleArray(arr: Product[]) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -27,31 +27,7 @@ const BestSeller: React.FC = () => {
       </div>
       <div className="product-list">
         {filteredProducts.map((product) => (
-          <div className="product-card" key={product.id}>
-            <div className="product-image">
-              <div
-                className="product-corner-ribbon"
-                data-ribbon={
-                  product.isSale ? "sale" : product.isNew ? "new" : ""
-                }
-              />
-              <img src={product.img} alt={product.title} />
-              <div className="quick-view">Quick View</div>
-            </div>
-            <div className="product-details">
-              <h3>{product.title}</h3>
-              <p className="product-price">
-                {product.oldPrice && (
-                  <span className="original-price">
-                    ${product.oldPrice.toFixed(2)}
-                  </span>
-                )}
-                <span className="current-price">
-                  ${product.price.toFixed(2)}
-                </span>
-              </p>
-            </div>
-          </div>
+          <ProductItem product={product} key={product.id} />
         ))}
       </div>
     </section>

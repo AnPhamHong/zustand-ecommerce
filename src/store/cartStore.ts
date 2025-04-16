@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import { Product } from "../types/product";
+import { Product } from "@/types/product";
 
 interface ProductInCartState {
   img: string;
@@ -14,7 +14,7 @@ interface ProductInCartState {
 interface CartState {
   lst: ProductInCartState[];
   total: number;
-  updateCart: (newProd: Product) => void;
+  updateCart: (newProd: Product, amount: number) => void;
 }
 
 export const useCartStore = create<CartState>()(
@@ -23,8 +23,9 @@ export const useCartStore = create<CartState>()(
       (set, get) => ({
         lst: [],
         total: 0,
-        updateCart: (newProd) => {
-          let product = {
+        updateCart: (newProd, amount) => {
+          console.log(amount)
+          const product = {
             img: newProd.img,
             title: newProd.title,
             oldPrice: newProd.oldPrice,
@@ -34,16 +35,17 @@ export const useCartStore = create<CartState>()(
           };
 
           const { lst } = get();
-          const existingItem = lst.find((item) => item.id === product.id);
-          if (existingItem) {
-            product = {
-              ...product,
-              quantityAddToCart: existingItem.quantityAddToCart + 1,
-            };
-            set({ lst: [...lst, product], total: lst.length + 1 });
+          const cloneLstCart = [...lst];
+          const existingItemIdx = lst.findIndex((item) => item.id === product.id);
+          if (existingItemIdx > -1) {
+            cloneLstCart[existingItemIdx].quantityAddToCart = cloneLstCart[existingItemIdx].quantityAddToCart + (amount ?? 1);
           } else {
-            set({ lst: [...lst, product], total: lst.length + 1 });
+            cloneLstCart.push(product);
           }
+
+          const totalAds = cloneLstCart.reduce((total, item) => total + item.quantityAddToCart, 0)
+          
+          set({ lst: [...cloneLstCart], total: totalAds });
         },
       }),
       {

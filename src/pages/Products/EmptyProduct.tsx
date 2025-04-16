@@ -1,5 +1,5 @@
-import imgEmpty from "../../assets/undraw_empty_4zx0.svg";
-import "../../styles/pages/EmptyProduct.scss";
+import imgEmpty from "@/assets/undraw_empty_4zx0.svg";
+import "@/styles/pages/EmptyProduct.scss";
 
 export default function EmptyProduct() {
   return (

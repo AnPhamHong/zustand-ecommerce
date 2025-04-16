@@ -1,6 +1,6 @@
-import { useFilterStore } from "../../store/filterStore";
-import "../../styles/pages/Recommended.scss";
-import { BrandType } from "../../types/product";
+import { useFilterStore } from "@/store/filterStore";
+import "@/styles/pages/Recommended.scss";
+import { BrandType } from "@/types/product";
 const Recommended = () => {
   const { selectedBrand, setSelectedBrand } = useFilterStore();
 

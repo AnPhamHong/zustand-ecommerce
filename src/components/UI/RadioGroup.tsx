@@ -1,4 +1,4 @@
-import styles from "../../styles/components/RadioGroup.module.scss";
+import styles from "@/styles/components/RadioGroup.module.scss";
 
 type RadioGroupProps<T> = {
   title: string;

@@ -1,6 +1,6 @@
 import React from "react";
-import imgMaterial from "../../assets/recycled-shoe-store-how-shoes-are-made-image.png";
-import "../../styles/pages/ShoeMaterial.scss";
+import imgMaterial from "@/assets/recycled-shoe-store-how-shoes-are-made-image.png";
+import "@/styles/pages/ShoeMaterial.scss";
 
 const materials = [
   {

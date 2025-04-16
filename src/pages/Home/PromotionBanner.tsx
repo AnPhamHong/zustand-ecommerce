@@ -1,7 +1,7 @@
 import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import * as promotions from "../../assets/imgPromotion";
+import * as promotions from "@/assets/imgPromotion";
 import "@/styles/pages/PromotionBanner.scss";
 
 const PromotionBanner: React.FC = () => {

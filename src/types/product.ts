@@ -27,4 +27,5 @@ export interface Product {
   company: string;
   category: string;
   id: string;
+  description: string;
 }

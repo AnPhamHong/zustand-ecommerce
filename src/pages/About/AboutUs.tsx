@@ -1,5 +1,5 @@
-import imgShoes from "../../assets/recycled-shoe-store-home-about-image.jpg";
-import "../../styles/pages/AboutUs.scss";
+import imgShoes from "@/assets/recycled-shoe-store-home-about-image.jpg";
+import "@/styles/pages/AboutUs.scss";
 
 function AboutUs() {
   return (

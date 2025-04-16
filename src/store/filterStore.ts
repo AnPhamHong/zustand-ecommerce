@@ -4,8 +4,8 @@ import {
   BrandType,
   CategoryType,
   PriceRange,
-} from "../types/product";
-import { initialMaxPrice, priceRanges } from "../db/priceRanges";
+} from "@/types/product";
+import { initialMaxPrice, priceRanges } from "@/db/priceRanges";
 
 interface FilterState {
   selectedBrand: BrandType;

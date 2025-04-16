@@ -1,8 +1,8 @@
-import "../../styles/pages/RecyclingSection.scss";
-import recyclingImg from "../../assets/recycled-shoe-store-recycled-circle-iamge.jpg";
-import veganSvg01 from "../../assets/recycled-shoe-badge-1.svg";
-import veganSvg02 from "../../assets/recycled-shoe-badge-2.svg";
-import veganSvg03 from "../../assets/recycled-shoe-badge-3.svg";
+import "@/styles/pages/RecyclingSection.scss";
+import recyclingImg from "@/assets/recycled-shoe-store-recycled-circle-iamge.jpg";
+import veganSvg01 from "@/assets/recycled-shoe-badge-1.svg";
+import veganSvg02 from "@/assets/recycled-shoe-badge-2.svg";
+import veganSvg03 from "@/assets/recycled-shoe-badge-3.svg";
 
 function RecyclingSection() {
   return (

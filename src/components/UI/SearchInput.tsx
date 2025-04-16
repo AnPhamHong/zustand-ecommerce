@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import styles from "../styles/components/SearchInput.module.scss";
+import styles from "@/styles/components/SearchInput.module.scss";
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
