@@ -19,6 +19,12 @@ body {
   line-height: $line-height-base;
   background-color: $color-bg;
   color: $color-text;
+
+  
+}
+
+body.modal_cart-quick-view-active {
+  overflow: hidden;
 }
 
 h1 {

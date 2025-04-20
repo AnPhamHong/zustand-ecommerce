@@ -11,7 +11,7 @@ function shuffleArray(arr: Product[]) {
 }
 
 function getRandomItems(arr: Product[], count = 6) {
-  const newArr = [...arr]; // Tạo bản sao tránh thay đổi mảng gốc
+  const newArr = [...arr];
   shuffleArray(newArr);
   return newArr.slice(0, count);
 }

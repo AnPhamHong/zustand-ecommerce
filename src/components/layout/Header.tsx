@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { AiOutlineClose } from "react-icons/ai";
+import ModalCart from "@/pages/Cart/ModalCart";
+import { useCartStore } from "@/store/cartStore";
+import { useCartTotal } from "@/hooks/userCartTotal";
 
 const Nav = ({
   isOpen,
@@ -23,11 +26,13 @@ const Nav = ({
         ) : null}
 
         <div className="header-menu-container-left">
-          <img
-            src={logoStore}
-            alt="Borcelle shoes store"
-            className={`header-logo-store ${isOpen ? "mobile-active" : ""}`}
-          />
+          <a href="/">
+            <img
+              src={logoStore}
+              alt="Borcelle shoes store"
+              className={`header-logo-store ${isOpen ? "mobile-active" : ""}`}
+            />
+          </a>
         </div>
         <div className="header-menu-container-right">
           <div className={`header-menu ${isOpen ? "mobile-active" : ""}`}>
@@ -69,6 +74,18 @@ const Nav = ({
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
+  const {
+    lst,
+    isQuickViewCart,
+    updateAmountCart,
+    removeItem,
+    openQuickViewCart,
+    isLoading,
+    updateAmountById,
+  } = useCartStore();
+
+  const { formatted, subTotal } = useCartTotal();
+
   return (
     <>
       <div className="above-header-site above-header-bar">
@@ -79,6 +96,17 @@ function Header() {
       <Nav
         isOpen={isMenuOpen}
         onChangeOpen={() => setIsMenuOpen(!isMenuOpen)}
+      />
+      <ModalCart
+        isOpen={isQuickViewCart}
+        onClose={() => openQuickViewCart()}
+        lstCart={lst}
+        updateCart={(id, action) => updateAmountCart(id, action)}
+        updateAmountItem={(id, quality) => updateAmountById(id, quality)}
+        removeItem={(id) => removeItem(id)}
+        total={formatted}
+        isLoading={isLoading}
+        totalQuality={subTotal.quality}
       />
     </>
   );

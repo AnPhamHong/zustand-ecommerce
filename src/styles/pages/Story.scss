@@ -1,0 +1,92 @@
+@use "../abstracts/variables"as *;
+@use "sass:color";
+
+.mission-vision-container {
+  background: #f1f1ef;
+  padding: 120px 80px;
+  .story-mission-vision {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    line-height: 2;
+    max-width: min(100%, 1200px);
+    margin: 0 auto;
+    .mission-item {
+      display: flex;
+      text-align: left;
+      gap: 2rem;
+
+      h2 {
+        width: 20%;
+        color: $color-dark;
+        font-size: 1.5rem;
+      }
+      p {
+        flex: 1;
+        color: $color-grey;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+.story-container {
+  background: #f6f6f6;
+  padding: 120px 80px;
+  .story-material {
+    text-align: center;
+    max-width: min(100%, 1200px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    line-height: 2;
+
+    .story-subtitle {
+      width: 70%;
+      margin: 0 auto;
+      h1.story-title {
+        font-size: 4.5rem;
+        color: $color-dark;
+      }
+      p.story-description {
+        font-size: 1.25rem;
+        color: $color-dark;
+      }
+    }
+
+    .story-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+
+      .story-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 1rem;
+
+        svg {
+          color: #6e7051;
+        }
+
+        h2 {
+          font-size: 1.25rem;
+          color: $color-dark;
+        }
+
+        p {
+          font-size: 0.875rem;
+          color: $color-grey;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+    .mission-vision-container, .story-container {
+        padding: 2rem;
+    }
+}

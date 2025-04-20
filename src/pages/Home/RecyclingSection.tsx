@@ -4,13 +4,15 @@ import veganSvg01 from "@/assets/recycled-shoe-badge-1.svg";
 import veganSvg02 from "@/assets/recycled-shoe-badge-2.svg";
 import veganSvg03 from "@/assets/recycled-shoe-badge-3.svg";
 
-function RecyclingSection() {
+function RecyclingSection({ hiddenImg }: { hiddenImg?: boolean }) {
   return (
     <section className="recycling-container-sub">
-      <div className="recycling-container">
-        <div className="recycling-img">
-          <img src={recyclingImg} alt="recycled-shoe-store-recycled-circle" />
-        </div>
+      <div className={`recycling-container ${hiddenImg ? "hidden" : ""}`}>
+        {!hiddenImg && (
+          <div className="recycling-img">
+            <img src={recyclingImg} alt="recycled-shoe-store-recycled-circle" />
+          </div>
+        )}
         <div className="recycling-content">
           <p className="recycling-description">
             Eu eget felis erat mauris aliquam mattis lacus, arcu leo aliquam

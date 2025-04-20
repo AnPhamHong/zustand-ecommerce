@@ -10,11 +10,25 @@
     max-width: min(100%, 1200px);
     margin: 0 auto;
 
+    &.hidden {
+      .recycling-content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        p {
+          width: 40%;
+        }
+        .recycling-icons {
+          flex: 1;
+        }
+      }
+    }
+
     .recycling-img {
       img {
         border-radius: 50%;
         border: 2px dashed #6e7051;
-        width:100%;
+        width: 100%;
       }
     }
 
@@ -38,7 +52,7 @@
         align-items: center;
         gap: 1rem;
         img {
-          width: calc(100%/3 - 1rem);
+          width: calc(100% / 3 - 1rem);
           max-width: 100px;
         }
       }
@@ -57,6 +71,22 @@
       align-items: center;
       max-width: 100%;
       padding: 2rem;
+
+      &.hidden {
+        .recycling-content {
+          width: 100%;
+          flex-direction: column;
+          p {
+            width: 100%;
+          }
+          .recycling-icons {
+            img {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+      }
 
       .recycling-content {
         width: 100%;

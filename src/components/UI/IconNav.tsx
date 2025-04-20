@@ -8,11 +8,16 @@ interface IconNavProps {
 
 const IconNav = ({ isOnlyCart }: IconNavProps) => {
   const { favorites } = useFavoritesStore();
-  const { total } = useCartStore();
+  const { total, openQuickViewCart } = useCartStore();
   const totalFavoriteItem = favorites.length ?? 0;
   return isOnlyCart ? (
     <div className={styles.iconNav}>
-      <div className={styles["heart-container"]}>
+      <div
+        className={styles["heart-container"]}
+        onClick={() => {
+          openQuickViewCart();
+        }}
+      >
         <CiShoppingCart size={32} />
         {total > 0 && <span className={styles["heart-badge"]}>{total}</span>}
       </div>
@@ -26,7 +31,12 @@ const IconNav = ({ isOnlyCart }: IconNavProps) => {
         )}
       </div>
 
-      <div className={styles["heart-container"]}>
+      <div
+        className={styles["heart-container"]}
+        onClick={() => {
+          openQuickViewCart();
+        }}
+      >
         <CiShoppingCart size={32} />
         {total > 0 && <span className={styles["heart-badge"]}>{total}</span>}
       </div>
