@@ -4,6 +4,7 @@ import { cn } from "@/utils/cn";
 import { ProductInCartState } from "@/types/cart";
 import { IoBagRemoveSharp } from "react-icons/io5";
 import { getTotalPrice } from "@/utils/cart";
+import { useNavigate } from "react-router-dom";
 
 interface ModalCartProps {
   isOpen: boolean;
@@ -28,6 +29,7 @@ const ModalCart: FC<ModalCartProps> = ({
   updateAmountItem,
   totalQuality,
 }) => {
+  const navigate = useNavigate();
   return (
     <div
       className={cn(styles.overlay, isOpen && styles.active)}
@@ -108,7 +110,14 @@ const ModalCart: FC<ModalCartProps> = ({
             <p>{total}</p>
           </div>
           <div className={styles.cart_footer_actions}>
-            <button>View Cart</button>
+            <button
+              onClick={() => {
+                onClose();
+                navigate("/cart");
+              }}
+            >
+              View Cart
+            </button>
             <button>Checkout</button>
           </div>
         </div>

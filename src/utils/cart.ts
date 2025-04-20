@@ -5,3 +5,11 @@ export function getTotalPrice(price: number, quality: number): string {
     currency: "USD",
   });
 }
+
+export function getTotalOrder(price: number, tax: number = 5,shipping:number = 8.32): string {
+  const total = price + tax + shipping;
+  return total.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+}
