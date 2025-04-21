@@ -1,0 +1,221 @@
+.checkout-container {
+  max-width: min(100%, 1200px);
+  border-radius: 2rem;
+  margin: 2rem auto;
+  display: flex;
+  background: #fff;
+  border-radius: 2rem;
+
+  .checkout-left {
+    background: #fff;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    width: 50%;
+    box-sizing: content-box;
+
+    .checkout-form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .error {
+        color: red;
+      }
+
+      .btn-container {
+        text-align: right;
+        border-top: 1px solid #ddd;
+        padding-top: 2rem;
+        button {
+          padding: 0.5rem 1.2rem;
+          border-radius: 0.5rem;
+          border: none;
+          background: #5b3a29;
+          color: #fff;
+          line-height: 1.5;
+        }
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &.checkbox {
+          label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            input {
+              accent-color: #5b3a29;
+            }
+          }
+        }
+        h2 {
+          color: #262b2c;
+          font-size: 1.5rem;
+        }
+
+        .section-form {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          label {
+            font-size: 1rem;
+          }
+
+          input {
+            padding: 0.8rem 1rem;
+            border-radius: 0.5rem;
+            outline: none;
+            border: 1px solid #ddd;
+          }
+        }
+
+        .row {
+          display: grid;
+          grid-template-columns: repeat(2, calc((100% - 2rem) / 2));
+          gap: 1rem;
+          justify-content: space-between;
+        }
+
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(3, calc((100% - 2rem) / 3));
+          gap: 1rem;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  .checkout-right {
+    background: #5b3a29;
+    width: 50%;
+    margin-left: 1rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 5rem 2rem;
+    position: relative;
+
+    .icon-expands {
+      visibility: hidden;
+      position: absolute;
+      right: 1rem;
+      top: 2rem;
+      cursor: pointer;
+
+      &.rotate {
+        transform: scaleY(-1);
+      }
+    }
+
+    > h2 {
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+    > p {
+      font-size: 2rem;
+      color: #ddd;
+    }
+
+    .checkout-cart-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+
+      .checkout-cart-list__item {
+        display: flex;
+        gap: 1rem;
+        border-bottom: 1px solid #ddd;
+        padding: 1rem 0;
+
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 0.5rem;
+        }
+
+        .product-title {
+          flex: 1;
+          flex-direction: column;
+          gap: 1rem;
+          p {
+            color: #fff;
+          }
+          span {
+            color: #ddd;
+          }
+        }
+
+        .product-subprice {
+          color: #fff;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .checkout-cart-pay-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      color: #ddd;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .checkout-cart-pay-detail,
+    .checkout-cart-total {
+      .detail {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .checkout-cart-total {
+      padding: 2rem 0;
+      font-size: 1rem;
+      color: #ddd;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .checkout-container {
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    margin: 0;
+    border-radius: 0;
+    flex-direction: column-reverse;
+    .checkout-left {
+      padding: 2rem;
+      border-radius: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .checkout-right {
+      width: 100%;
+      padding: 2rem;
+      border-radius: 0;
+      box-sizing: border-box;
+      margin-left: 0;
+
+      .icon-expands.rotate + div {
+        display: none;
+      }
+      .icon-expands {
+        visibility: visible;
+      }
+    }
+  }
+}

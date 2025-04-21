@@ -1,4 +1,5 @@
 import Cart from "@/pages/Cart/Cart";
+import Checkout from "@/pages/Cart/Checkout";
 import Home from "@/pages/Home/Home";
 import NotFound from "@/pages/NotFound/NotFound";
 import OurStory from "@/pages/OurStory/OurStory";
@@ -12,6 +13,7 @@ function Content() {
       <Route path="/products" element={<ProductList />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/story" element={<OurStory />} />
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

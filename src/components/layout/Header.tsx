@@ -1,7 +1,7 @@
 import "@/styles/pages/Header.scss";
 import IconNav from "@/components/UI/IconNav";
 import logoStore from "@/assets/logo-store.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { AiOutlineClose } from "react-icons/ai";
@@ -72,6 +72,8 @@ const Nav = ({
 };
 
 function Header() {
+  const location = useLocation();
+
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const {
@@ -86,7 +88,21 @@ function Header() {
 
   const { formatted, subTotal } = useCartTotal();
 
-  return (
+  return location.pathname === "/checkout" ? (
+    <div
+      style={{
+        textTransform: "uppercase",
+        fontSize: "1.2rem",
+        padding: ".5rem",
+        textAlign: "center",
+        borderBottom: "1px solid #ddd",
+        background: "#4B6870",
+        color: "#fff",
+      }}
+    >
+      borcelle
+    </div>
+  ) : (
     <>
       <div className="above-header-site above-header-bar">
         <div>

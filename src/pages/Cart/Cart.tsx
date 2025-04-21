@@ -5,6 +5,7 @@ import { IoBagRemoveSharp } from "react-icons/io5";
 import { getTotalOrder, getTotalPrice } from "@/utils/cart";
 import { useCartTotal } from "@/hooks/userCartTotal";
 import PromotionBanner from "@/pages/Home/PromotionBanner";
+import { useNavigate } from "react-router-dom";
 
 export interface IAppProps {
   items: ProductInCartState[];
@@ -21,6 +22,8 @@ export default function Cart() {
   } = useCartStore();
 
   const { formatted, subTotal } = useCartTotal();
+  const navigate = useNavigate();
+
   return (
     <section className="cart-container">
       <h1>Shopping Cart</h1>
@@ -106,7 +109,12 @@ export default function Cart() {
             <span>Order total</span>
             <span>{getTotalOrder(subTotal.price)}</span>
           </div>
-          <button className="checkout-btn">PROCEED TO CHECKOUT</button>
+          <button
+            className="checkout-btn"
+            onClick={() => navigate("/checkout")}
+          >
+            PROCEED TO CHECKOUT
+          </button>
         </div>
       </div>
       <PromotionBanner />
