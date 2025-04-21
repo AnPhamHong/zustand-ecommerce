@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import  create from "zustand";
 import { persist, devtools } from "zustand/middleware";
 import {
   BrandType,
@@ -29,7 +29,7 @@ function getPriceLabel(min: number, max: number): string {
   return found ? found.label : "Custom";
 }
 
-export const useFilterStore = create<FilterState>()(
+export const useFilterStore = create<FilterState>(
   devtools(
     persist<FilterState>(
       (set) => ({
