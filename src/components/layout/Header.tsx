@@ -39,9 +39,9 @@ const Nav = ({
             <Link to="/products" onClick={() => onChangeOpen(!isOpen)}>
               Shoes
             </Link>
-            <Link to="/collection" onClick={() => onChangeOpen(!isOpen)}>
+            {/* <Link to="/collection" onClick={() => onChangeOpen(!isOpen)}>
               Collection
-            </Link>
+            </Link> */}
             <Link to="/look-book" onClick={() => onChangeOpen(!isOpen)}>
               Lookbook
             </Link>
@@ -71,6 +71,16 @@ const Nav = ({
   );
 };
 
+function sectionAboveHeader() {
+  return (
+    <div className="above-header-site above-header-bar">
+      <div>
+        <p>Free Express Shipping on all orders with all duties included</p>
+      </div>
+    </div>
+  );
+}
+
 function Header() {
   const location = useLocation();
 
@@ -89,26 +99,10 @@ function Header() {
   const { formatted, subTotal } = useCartTotal();
 
   return location.pathname === "/checkout" ? (
-    <div
-      style={{
-        textTransform: "uppercase",
-        fontSize: "1.2rem",
-        padding: ".5rem",
-        textAlign: "center",
-        borderBottom: "1px solid #ddd",
-        background: "#4B6870",
-        color: "#fff",
-      }}
-    >
-      borcelle
-    </div>
+    sectionAboveHeader()
   ) : (
     <>
-      <div className="above-header-site above-header-bar">
-        <div>
-          <p>Free Express Shipping on all orders with all duties included</p>
-        </div>
-      </div>
+      {sectionAboveHeader()}
       <Nav
         isOpen={isMenuOpen}
         onChangeOpen={() => setIsMenuOpen(!isMenuOpen)}

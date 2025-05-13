@@ -1,53 +1,81 @@
-$font-family-primary: 'Poppins', sans-serif;
+$font-family-primary: "Poppins", sans-serif;
 
 // Base font-size: 16px (desktop)
 $font-size-base: 1rem; // 1rem = 16px
 $line-height-base: 1.5;
 
-// Các kích thước cho heading
-$font-size-h1: 2rem;    // ~32px
+$font-size-h1: 2rem; // ~32px
 $font-size-h2: 1.75rem; // ~28px
-$font-size-h3: 1.5rem;  // ~24px
+$font-size-h3: 1.5rem; // ~24px
 
-// Text nhỏ (ví dụ: label, caption)
 $font-size-small: 0.875rem; // ~14px
 
-$color-bg: #E9EBEC;         
-$color-sidebar: #DFE5D9;    
-$color-header: #4B6870;     
-$color-accent: #6B5EA8;     
-$color-text: #333;          
-$color-text-inverse: #FFFFFF;  
+$color-bg: #e9ebec;
+$color-sidebar: #dfe5d9;
+$color-header: #4b6870;
+$color-accent: #6b5ea8;
+$color-text: #333;
+$color-text-inverse: #ffffff;
 $cursor-color: #2f4858;
-$color-shadow: #DAD7CD; 
-$color-hover-shadow: #B7B7A4; // Màu bóng khi hover (đậm hơn 1 chút)
-$color-dark: #262B2C;
-$color-grey: #979A9B;
+$color-shadow: #dad7cd;
+$color-hover-shadow: #b7b7a4;
+$color-dark: #262b2c;
+$color-dark-01: #1f2b37;
+$color-dark-02: #111928;
+$color-dark-03: #1a202c;
+$color-grey: #979a9b;
+$color-grey-01: #2e2b2b;
+$color-grey-02: #aaa;
+$color-green-dark: #6e7051;
+$color-green-dark-01: #7c7c5f;
 
 // Accent Colors
-$color-border: #6B705C; // Viền hoặc bóng phụ
+$color-border: #6b705c;
 
 // Text Colors
-$color-text-muted: #8c8c8c ; // Màu chữ phụ (giá cũ)
-$color-price: #d32f2f; // Màu giá nổi bật
-$color-sale: #E63946;
+$color-text-muted: #8c8c8c;
+$color-price: #d32f2f;
+$color-sale: #e63946;
+$color-err: #ff4d4f;
 
 // Color Variant Gradient
-$color-variant-start: #D4A373; // Vàng nâu
-$color-variant-end: #B5838D;   // Hồng đất
-// Màu sắc chính
-$primary-color: #4CBFC9; // Xanh ngọc - Màu chủ đạo, hiện đại
-$secondary-color: #437DAD; // Xanh navy nhẹ - Sang trọng, chuyên nghiệp
-$accent-color: #A13763; // Đỏ rượu vang - Tạo điểm nhấn mạnh mẽ
-$highlight-color: #705A8A; // Tím pastel - Huyền bí, tinh tế
-$warm-tone: #8E5D6A; // Hồng đất - Mềm mại, ấm áp
+$color-variant-start: #d4a373;
+$color-variant-end: #b5838d;
+$color-variant-end-01: #8e5d6a;
+$primary-color: #4cbfc9;
+$secondary-color: #437dad;
+$secondary-color-lighter: #365f8b;
+$third-color: #e8d3c1;
+$third-color-lighter: #5b3a29;
+$third-color-lighter-01: #8c5331;
+$accent-color: #a13763;
+$accent-color-lighter: #FFF5E1;
+$accent-color-lighter-01: #E68F65;
+$accent-color-lighter-02: #f4a261;
+$accent-color-lighter-03: #e76f51;
+$accent-color-lighter-04: #a53d00;
+$accent-color-lighter-05: #a67c52;
+$gray-color: #CCCCCC;
+$gray-color-ins: #DDDDDD;
+$gray-color-inste: #f1f1ef;
+$gray-color-inste-01: #f5f5f5;
+$gray-color-inste-02: #8a817c;
+$gray-color-inste-03: #666;
+$gray-color-inste-04: #eee;
+$gray-color-inste-05: #718096;
+$gray-color-inste-06: #c5caca;
+$yellow-color: #ffcc00;
+$highlight-color: #705a8a;
+$blue-color: #4a90e2;
+$blue-color-ins: #3758fa;
+$blue-color-ins-01: #606ef5;
+$warm-tone: #070607;
 
-// Màu văn bản
-$text-color: #FFFFFF; // Màu chữ chính - Trắng
-$secondary-text-color: #8E5D6A; // Màu chữ phụ - Hồng đất
+$text-color: #ffffff;
+$secondary-text-color: #300511;
 
-// Gradient nền
+// Gradient background
 $background-gradient: linear-gradient(135deg, $primary-color, $highlight-color);
 
-// Hiệu ứng hover
+// effect hover
 $hover-effect: $highlight-color;

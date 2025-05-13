@@ -4,18 +4,7 @@ import { formattedPrice, getTotalOrder, getTotalPrice } from "@/utils/cart";
 import { useCartTotal } from "@/hooks/userCartTotal";
 import { MdExpandCircleDown } from "react-icons/md";
 import { useState } from "react";
-
-interface FormData {
-  email: string;
-  cardNumber: string;
-  expiry: string;
-  cvc: string;
-  address: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  sameAsShipping: boolean;
-}
+import { FormData } from "@/types/checkout";
 
 type Errors = Partial<Record<keyof FormData, string>>;
 

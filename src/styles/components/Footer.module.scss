@@ -1,6 +1,9 @@
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
 .footer {
-  background: #e8d3c1;
-  color: #5b3a29;
+  background: $third-color;
+  color: $third-color-lighter;
 
   .footerSpace {
     max-width: min(100%, 1200px);
@@ -13,7 +16,7 @@
     display: flex;
     justify-content: space-around;
     gap: 2rem;
-    border-bottom: 1px solid #a13763;
+    border-bottom: 1px solid $accent-color;
 
     .logoStore {
       display: flex;
@@ -34,13 +37,13 @@
       gap: 10px;
       font-size: 1rem;
       font-weight: bold;
-      color: #5b3a29;
+      color: $third-color-lighter;
       justify-content: center;
 
       .feature {
         overflow: hidden;
         white-space: nowrap;
-        border-right: 2px solid #5b3a29;
+        border-right: 2px solid $third-color-lighter;
         width: 0;
         opacity: 0;
         display: flex;
@@ -101,12 +104,13 @@
         font-size: 1.5rem;
         margin-bottom: 2rem;
         font-weight: bold;
+        text-transform: capitalize;
       }
 
       p {
         font-size: 1rem;
         line-height: 1.8;
-        color: #5b3a29;
+        color: $third-color-lighter;
       }
 
       ul {
@@ -118,10 +122,11 @@
           font-size: 1rem;
           margin-bottom: 8px;
           cursor: pointer;
-          color: #5b3a29;
+          color: $third-color-lighter;
+          text-transform: capitalize;
 
           &:hover {
-            color: #8c5331;
+            color: $third-color-lighter-01;
           }
         }
       }
@@ -137,7 +142,7 @@
           transition: color 0.3s;
 
           &:hover {
-            color: #8c5331;
+            color: $third-color-lighter-01;
             transition: color 0.3s ease-in-out;
             transform: scale(1.1);
           }
@@ -147,12 +152,12 @@
   }
 
   .footerPay {
-    background: #5b3a29;
+    background: $third-color-lighter;
     padding: 15px 20px;
     color: #fff5e1;
 
     > div {
-      max-width: min(100%, 1200px);
+      // max-width: min(100%, 1200px);
       display: flex;
       justify-content: space-between;
       align-items: center;

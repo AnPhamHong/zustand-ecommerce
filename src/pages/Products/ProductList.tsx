@@ -20,7 +20,13 @@ export const UseProduct = (id: string) => {
   return products.find((p) => p.id === id) || null;
 };
 
-const ProductList = () => {
+const ProductList = ({
+  title = "all products",
+  onlySale = false,
+}: {
+  title?: string;
+  onlySale?: boolean;
+}) => {
   const {
     selectedCategory,
     maxPrice,
@@ -49,6 +55,16 @@ const ProductList = () => {
 
       const matchesBrand =
         selectedBrand === "All Products" || product.company === selectedBrand;
+
+      if (onlySale) {
+        return (
+          matchesBrand &&
+          matchesCategory &&
+          matchesSearch &&
+          matchesPrice &&
+          !!product.isSale
+        );
+      }
       return matchesBrand && matchesCategory && matchesSearch && matchesPrice;
     });
   }, [
@@ -58,6 +74,7 @@ const ProductList = () => {
     minPrice,
     maxPrice,
     selectedBrand,
+    onlySale,
   ]);
 
   const productData = useMemo(() => {
@@ -84,7 +101,7 @@ const ProductList = () => {
   return (
     <>
       <section className="products-lst-container">
-        <h1 className="products-lst-subtitle">all products</h1>
+        <h1 className="products-lst-subtitle">{title}</h1>
         <div className="product-list">
           {filteredProducts.length ? (
             filteredProducts.map((product, idx) => {

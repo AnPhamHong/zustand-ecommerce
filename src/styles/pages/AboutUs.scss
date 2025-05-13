@@ -33,30 +33,30 @@
   
       h3.about-subtitle {
         font-size: 3rem;
-        color: #a53d00;
+        color: $accent-color-lighter-04;
       }
   
       h2.about-title {
-        color: #333;
+        color: $color-text;
         font-size: 2rem;
       }
   
       p.about-description {
         font-size: 1.1rem;
-        color: #666;
+        color: $gray-color-inste-03;
         line-height:2;
       }
   
       div.about-read-more {
         cursor: pointer;
         text-transform: uppercase;
-        border-bottom: 2px solid #f6aa28;
+        border-bottom: 2px solid $yellow-color;
         width: fit-content;
         transition: all 0.3s;
         font-weight: bold;
   
         &:hover {
-          border-bottom: 2px solid #000;
+          border-bottom: 2px solid $color-dark;
         }
       }
     }

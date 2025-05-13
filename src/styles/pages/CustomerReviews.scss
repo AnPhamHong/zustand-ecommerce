@@ -1,5 +1,7 @@
+@use "../abstracts/variables"as *;
+
 .reviews-container-sub {
-  background-color: #fff;
+  background-color: $color-text-inverse;
   .reviews-container {
     padding: 50px 80px;
     max-width: min(100%, 1200px);
@@ -24,13 +26,13 @@
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
-        border: 1px solid #e68f65;
+        border: 1px solid $accent-color-lighter-01;
         gap: 1rem;
         padding: 1.7rem;
         border-radius: 10px;
-        background: #fff5e1;
+        background: $accent-color-lighter;
         .review-stars {
-          color: #a53d00;
+          color: $accent-color-lighter-04;
         }
         .review-text {
           font-size: 1.1rem;
@@ -50,7 +52,7 @@
             object-fit: cover;
           }
           span {
-            color: #6e7051;
+            color: $color-green-dark;
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -59,7 +61,7 @@
       }
     }
     .reviews-rating {
-      color: #979a9b;
+      color: $color-grey;
       font-size: 1rem;
       font-weight: 600;
       margin-top: 3rem;

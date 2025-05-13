@@ -1,4 +1,4 @@
-@use "sass:color";
+@use "sass:color";@use "../abstracts/variables"as *;
 .no-product-container {
     text-align: center;
     padding: 2rem;
@@ -15,8 +15,8 @@
     }
   
     .reset-filters-btn {
-      background-color: #6B5EA8;
-      color: #fff;
+      background-color: $color-accent;
+      color: $color-text-inverse;
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
@@ -25,7 +25,7 @@
       transition: background-color 0.3s ease;
   
       &:hover {
-        background-color: color.scale(#6B5EA8, $lightness: -10%);
+        background-color: color.scale($color-accent, $lightness: -10%);
 
       }
     }

@@ -7,7 +7,7 @@
   $card-img-height: 220px;
   $card-img-scale: 0.8;
   max-width: min(100%, 1200px);
-  background: #fff;
+  background: $color-text-inverse;
   padding: 50px 80px;
   border-radius: 2rem;
 
@@ -97,7 +97,7 @@
           position: absolute;
           bottom: 0;
           background: rgba(0, 0, 0, 0.6);
-          color: #fff;
+          color: $color-text-inverse;
           width: 100%;
           padding: 0.2rem 1rem;
           text-align: center;
@@ -118,7 +118,7 @@
 
         h3 {
           font-size: 1.3rem;
-          color: #262b2c;
+          color: $color-dark;
           font-weight: 700;
           text-align: center;
           display: -webkit-box;
@@ -136,11 +136,11 @@
           .original-price {
             text-decoration: line-through;
             padding-right: 0.5rem;
-            color: #c5caca;
+            color: $gray-color-inste-06;
           }
 
           .current-price {
-            color: #979a9b;
+            color: $color-grey;
           }
         }
       }

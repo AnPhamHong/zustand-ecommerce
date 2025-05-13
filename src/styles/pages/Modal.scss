@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as *;
+@use "sass:color";
 
 
 @keyframes fadeIn {
@@ -32,7 +34,7 @@
   }
 
   .modal-content {
-    background-color: #fff;
+    background-color: $color-text-inverse;
     width: 80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease-out;
@@ -43,7 +45,7 @@
   
   .modal-body {
     font-size: 1rem;
-    color: #333;
+    color: $color-text;
     max-height: 500px;
   }
 

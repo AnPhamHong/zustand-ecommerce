@@ -1,3 +1,6 @@
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
 .hero-banner {
   position: relative;
   width: 100%;
@@ -19,7 +22,7 @@
     left: 100px;
     z-index: 10;
     text-align: left;
-    color: white;
+    color: $color-text-inverse;
     max-width: 600px;
     padding: 0 2rem;
     display: flex;
@@ -34,7 +37,7 @@
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 1.2rem;
-    color: #fff;
+    color: $color-text-inverse;
   }
 
   &__description {
@@ -51,15 +54,15 @@
     padding: 1rem 2rem;
     font-weight: 600;
     border: none;
-    background: #a67c52;
-    color: #fff;
+    background: $accent-color-lighter-05;
+    color: $color-text-inverse;
     cursor: pointer;
     border-radius: 0.5rem;
     transition: background 0.3s ease-in-out;
     font-size: 1rem;
 
     &:hover {
-      background: #8c5331;
+      background: $third-color-lighter-01;
       transform: scale(1.05);
     }
   }

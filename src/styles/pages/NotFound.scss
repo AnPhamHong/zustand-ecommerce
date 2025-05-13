@@ -1,8 +1,10 @@
-/* NotFound.scss */
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
 
 .notfound-section {
-  background-color: #fff;
-  color: #000;
+  background-color: $color-text-inverse;
+  color: $color-dark-02;
   padding: 8rem 2rem;
   display: flex;
   justify-content: center;
@@ -25,7 +27,7 @@
 .error-code {
   font-size: 8rem;
   font-weight: 800;
-  color: #5b3a29; /* Adjust the primary color here */
+  color: $third-color-lighter; /* Adjust the primary color here */
   margin-bottom: 1.5rem;
 }
 
@@ -33,19 +35,19 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #1a202c;
+  color: $color-dark-03;
 }
 
 .description {
   font-size: 1.125rem;
-  color: #718096;
+  color: $gray-color-inste-05;
   margin-bottom: 2rem;
 }
 
 .back-button {
   padding: 0.75rem 2rem;
-  background-color: #5b3a29;
-  color: white;
+  background-color: $third-color-lighter;
+  color: $color-text-inverse;
   border-radius: 9999px;
   text-decoration: none;
   font-size: 1rem;
@@ -54,12 +56,12 @@
   transition: background-color 0.3s, transform 0.3s;
 
   &:hover {
-    background-color: #5b3a29;
+    background-color: $third-color-lighter;
     transform: scale(1.05);
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 4px #5b3a29;
+    box-shadow: 0 0 0 4px $third-color-lighter;
   }
 }

@@ -1,7 +1,10 @@
+@use "../abstracts/variables" as *;@use "sass:color";
+
+
 .star-rating {
   display: flex;
   font-size: 2rem;
-  color: #ccc;
+  color: $gray-color;
 }
 
 .star {
@@ -14,11 +17,11 @@
 }
 
 .full {
-  color: #ffcc00;
+  color: $yellow-color;
 }
 
 .half {
-  background: linear-gradient(90deg, #ffcc00 50%, #ccc 50%);
+  background: linear-gradient(90deg, $yellow-color 50%, $gray-color 50%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -1,17 +1,19 @@
+@use "../abstracts/variables" as *;@use "sass:color";
+
 .container_search_input {
   display: inline-block;
-  background-color: #f5f5f5;
+  background-color: $gray-color-inste-01;
   border-radius: 12px;
   padding: 8px 16px;
   width: 100%;
   max-width: 500px;
 
   input::placeholder {
-    color: #8a817c; // Màu đậm hơn giúp dễ đọc
+    color: $gray-color-inste-02; 
   }
 
   input:hover {
-    border-color: #b5838d;
+    border-color: $color-variant-end;
   }
 }
 
@@ -20,9 +22,9 @@
   background: transparent;
   outline: none;
   font-size: 1rem;
-  color: #555;
+  color: $color-grey-01;
 
   &::placeholder {
-    color: #aaa;
+    color: $color-grey-02;
   }
 }

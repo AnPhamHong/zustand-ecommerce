@@ -1,13 +1,17 @@
+@use "../abstracts/variables"as *;
+@use "sass:color";
+
+
 .checkout-container {
   max-width: min(100%, 1200px);
   border-radius: 2rem;
   margin: 2rem auto;
   display: flex;
-  background: #fff;
+  background: $color-text-inverse;
   border-radius: 2rem;
 
   .checkout-left {
-    background: #fff;
+    background: $color-text-inverse;
     padding: 4rem 2rem;
     border-radius: 2rem;
     width: 50%;
@@ -19,20 +23,22 @@
       gap: 2rem;
 
       .error {
-        color: red;
+        color: $color-err;
+        font-size: .8rem;
       }
 
       .btn-container {
         text-align: right;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid $gray-color-ins;
         padding-top: 2rem;
         button {
           padding: 0.5rem 1.2rem;
           border-radius: 0.5rem;
           border: none;
-          background: #5b3a29;
-          color: #fff;
+          background: $third-color-lighter;
+          color: $color-text-inverse;
           line-height: 1.5;
+          cursor: pointer;
         }
       }
 
@@ -48,12 +54,12 @@
             gap: 0.5rem;
 
             input {
-              accent-color: #5b3a29;
+              accent-color: $third-color-lighter;
             }
           }
         }
         h2 {
-          color: #262b2c;
+          color: $color-dark;
           font-size: 1.5rem;
         }
 
@@ -70,7 +76,7 @@
             padding: 0.8rem 1rem;
             border-radius: 0.5rem;
             outline: none;
-            border: 1px solid #ddd;
+            border: 1px solid $gray-color-ins;
           }
         }
 
@@ -92,7 +98,7 @@
   }
 
   .checkout-right {
-    background: #5b3a29;
+    background: $third-color-lighter;
     width: 50%;
     margin-left: 1rem;
     border-top-right-radius: 2rem;
@@ -114,12 +120,12 @@
 
     > h2 {
       font-size: 1rem;
-      color: #ddd;
+      color: $gray-color-ins;
     }
 
     > p {
       font-size: 2rem;
-      color: #ddd;
+      color: $gray-color-ins;
     }
 
     .checkout-cart-list {
@@ -132,7 +138,7 @@
       .checkout-cart-list__item {
         display: flex;
         gap: 1rem;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $gray-color-ins;
         padding: 1rem 0;
 
         img {
@@ -146,15 +152,15 @@
           flex-direction: column;
           gap: 1rem;
           p {
-            color: #fff;
+            color: $color-text-inverse;
           }
           span {
-            color: #ddd;
+            color: $gray-color-ins;
           }
         }
 
         .product-subprice {
-          color: #fff;
+          color: $color-text-inverse;
           font-size: 1rem;
         }
       }
@@ -165,9 +171,9 @@
       flex-direction: column;
       gap: 1.5rem;
       padding: 2rem 0;
-      color: #ddd;
+      color: $gray-color-ins;
       font-size: 0.9rem;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid $gray-color-ins;
     }
 
     .checkout-cart-pay-detail,
@@ -181,7 +187,7 @@
     .checkout-cart-total {
       padding: 2rem 0;
       font-size: 1rem;
-      color: #ddd;
+      color: $gray-color-ins;
     }
   }
 }

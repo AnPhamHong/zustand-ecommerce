@@ -11,32 +11,39 @@ import {
 } from "react-icons/fa";
 import PaymentIcons from "@/assets/payment-icons.png";
 import logoStore from "@/assets/logo-store.png";
+import { dataFooter } from "@/db/dtFooter";
+import { useLocation } from "react-router-dom";
 
 const Footer: React.FC = () => {
+  const location = useLocation();
+
+  const isHideTopSection =
+    location.pathname === "/checkout" || location.pathname === "/look-book";
   return (
     <footer className={styles.footer}>
       <div className={styles.footerSpace}>
         {/* Top Section */}
-        <div className={styles.topSection}>
-          <div className={styles.logoStore}>
-            <img src={logoStore} alt="Borcelle shoes store" />
+        {isHideTopSection ? null : (
+          <div className={styles.topSection}>
+            <div className={styles.logoStore}>
+              <img src={logoStore} alt="Borcelle shoes store" />
+            </div>
+            <div className={styles.features}>
+              <div className={styles.feature}>
+                <FaSync size={18} />
+                <span>Free Return</span>
+              </div>
+              <div className={styles.feature}>
+                <FaLock size={18} />
+                <span>Secure Payment</span>
+              </div>
+              <div className={styles.feature}>
+                <FaTruck size={18} />
+                <span>Express Shipping</span>
+              </div>
+            </div>
           </div>
-          <div className={styles.features}>
-            <div className={styles.feature}>
-              <FaSync size={18} />
-              <span>Free Return</span>
-            </div>
-            <div className={styles.feature}>
-              <FaLock size={18} />
-              <span>Secure Payment</span>
-            </div>
-            <div className={styles.feature}>
-              <FaTruck size={18} />
-              <span>Express Shipping</span>
-            </div>
-          </div>
-        </div>
-
+        )}
         {/* Bottom Section */}
         <div className={styles.bottomSection}>
           {/* Company Info */}
@@ -54,47 +61,24 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Shop */}
-          <div className={styles.column}>
-            <h3>Shop</h3>
-            <ul>
-              <li>Shop Men</li>
-              <li>Shop Women</li>
-              <li>Lookbook</li>
-              <li>Gift Card</li>
-              <li>Sale</li>
-            </ul>
-          </div>
-
-          {/* About */}
-          <div className={styles.column}>
-            <h3>About</h3>
-            <ul>
-              <li>Our Story</li>
-              <li>Our Materials</li>
-              <li>Our Value</li>
-              <li>Sustainability</li>
-              <li>Manufacture</li>
-            </ul>
-          </div>
-
-          {/* Need Help */}
-          <div className={styles.column}>
-            <h3>Need Help?</h3>
-            <ul>
-              <li>FAQs</li>
-              <li>Shipping & Returns</li>
-              <li>Shoe Care</li>
-              <li>Size Chart</li>
-              <li>Contact Us</li>
-            </ul>
-          </div>
+          {dataFooter.map((item) => {
+            return (
+              <div className={styles.column} key={item.key}>
+                <h3>{item.name}</h3>
+                <ul>
+                  {item.children.map((child, idx) => {
+                    return <li key={`child-${idx}`}>{child}</li>;
+                  })}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className={styles.footerPay}>
         <div>
           <div className={styles.left}>
-            <p>© 2025 Borcelle Shoe Store. Powered by Recycled Shoe Store.</p>
+            <p>© 2025 Borcelle Shoe Store. Powered by An Pham.</p>
           </div>
           <div className={styles.right}>
             <img src={PaymentIcons} alt="Stripe" />

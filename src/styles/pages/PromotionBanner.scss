@@ -1,9 +1,10 @@
+@use "../abstracts/variables"as *;
 .promotion-banner {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
-  background: #e8d3c1;
+  background: $third-color;
 
   .splide {
     border-radius: 12px;
@@ -39,18 +40,18 @@
     width: 12px;
     height: 12px;
     margin: 0 5px;
-    background: #5b3a29;
+    background: $third-color-lighter;
     border-radius: 50%;
     transition: background 0.3s ease, transform 0.3s ease;
 
     &:hover {
-      background: #8c5331;
+      background: $third-color-lighter-01;
       transform: scale(1.2);
     }
   }
 
   .splide__pagination__page.is-active {
-    background: #8c5331;
+    background: $third-color-lighter-01;
     width: 16px;
     height: 16px;
     transform: scale(1.2);
@@ -71,7 +72,7 @@
       height: 8px;
 
       &:hover {
-        background: #8c5331;
+        background: $third-color-lighter-01;
         transform: scale(1.1);
       }
     }

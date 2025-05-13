@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
+.backToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    background-color: $secondary-color; // your main accent color
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    transform: scale(0.8);
+    width: 50px;
+    height: 50px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &:hover {
+      background-color: $secondary-color-lighter;
+      transform: scale(1);
+    }
+  }
+  
+  .show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  

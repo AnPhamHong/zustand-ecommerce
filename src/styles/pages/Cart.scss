@@ -1,13 +1,17 @@
+@use "../abstracts/variables"as *;
+@use "sass:color";
+
+
 .cart-container {
   max-width: min(100%, 1200px);
-  background: #fff;
+  background: $color-text-inverse;
   padding: 4rem 2rem;
   border-radius: 2rem;
   margin: 2rem auto;
 
   h1 {
     text-align: center;
-    color: #262b2c;
+    color: $color-dark;
   }
 
   .cart-wrapper {
@@ -21,10 +25,11 @@
       max-width: 70%;
       border-collapse: collapse;
       font-size: 1rem;
-      color: #979a9b;
+      color: $color-grey;
+      height: fit-content;
 
       thead {
-        background-color: #f5f5f5;
+        background-color: $gray-color-inste-01;
       }
 
       tr > th:first-child {
@@ -38,7 +43,7 @@
       td {
         text-align: left;
         padding: 1rem;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $gray-color-ins;
       }
 
       td:first-child {
@@ -46,22 +51,22 @@
       }
 
       td:nth-child(3) {
-        color: #6e7051 !important;
+        color: $color-green-dark !important;
       }
 
       img {
         width: 60px;
         height: 60px;
         object-fit: cover;
-        border: 1px solid #ddd;
+        border: 1px solid $gray-color-ins;
       }
 
       .remove-btn {
         transition: color 0.3s ease;
         cursor: pointer;
-        color: #f4a261;
+        color: $accent-color-lighter-02;
         &:hover {
-          color: #e76f51;
+          color: $accent-color-lighter-03;
           transform: scale(1.2);
         }
       }
@@ -73,7 +78,7 @@
 
         button {
           font-size: 1.125rem;
-          border: 1px solid #dddddd;
+          border: 1px solid $gray-color-ins;
           background: transparent;
           height: 40px;
           width: 100%;
@@ -93,7 +98,7 @@
           // width: 50px;
           height: 40px;
           box-sizing: border-box;
-          border: 1px solid #ddd;
+          border: 1px solid $gray-color-ins;
           text-align: center;
           border-radius: 0;
 
@@ -106,15 +111,15 @@
     .cart-totals {
       max-width: 25%;
       width: 100%;
-      color: #979a9b;
+      color: $color-grey;
 
       .cart-totals-header {
-        background-color: #f5f5f5;
+        background-color: $gray-color-inste-01;
         height: 56.5px;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         padding: 1rem;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $gray-color-ins;
 
         h4 {
           font-size: 1rem;
@@ -126,7 +131,7 @@
         justify-content: space-between;
         padding: 0.5rem 0;
         font-size: 1rem;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $gray-color-ins;
         padding: 1rem;
 
         &:last-child {
@@ -137,8 +142,8 @@
       .checkout-btn {
         margin-top: 1.5rem;
         padding: 1rem;
-        background-color: #7c7c5f;
-        color: #fff;
+        background-color: $color-green-dark-01;
+        color: $color-text-inverse;
         font-weight: bold;
         border: none;
         text-align: center;
@@ -148,9 +153,9 @@
         font-size: 1rem;
 
         transition: color 0.3s ease;
-        background: #e76f51;
+        background: $accent-color-lighter-03;
         &:hover {
-          background: #f4a261;
+          background: $accent-color-lighter-02;
         }
       }
     }
@@ -198,12 +203,12 @@
         }
 
         tr {
-          border: 1px solid #dddddd;
+          border: 1px solid $gray-color-ins;
           border-bottom: none;
 
           &:last-child {
             
-          border-bottom: 1px solid #dddddd;
+          border-bottom: 1px solid $gray-color-ins;
           }
         }
         td {
